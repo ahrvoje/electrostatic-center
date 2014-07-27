@@ -5,7 +5,7 @@ Center of electrostatic potential is a maximum point of electrostatic potential 
 
 Center is also incorporated into Kimberling's Encyclopedia of triangle centers as point *X(5626) = CENTER OF ELECTROSTATIC POTENTIAL.* (http://faculty.evansville.edu/ck6/encyclopedia/ETCPart4.html)
 
-This repository containes a few routines for numerical calculation of Center of electrostatic potential, characteristic triangle point X(5626). Routines are mainly written in Wolfram Mathematica, but practical approximation is also implemented in C and Python.
+This repository containes a few routines for numerical calculation of X(5626). Routines are mainly written in Wolfram Mathematica, but practical approximation is also implemented in C and Python.
 
 Wolfram Mathematica
 -------------------
