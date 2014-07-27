@@ -7,8 +7,10 @@ Center of electrostatic potential is a maximum point of electrostatic potential 
 
 Center is also incorporated into Kimberling's Encyclopedia of triangle centers as point *X(5626) = CENTER OF ELECTROSTATIC POTENTIAL.* (http://faculty.evansville.edu/ck6/encyclopedia/ETCPart4.html)
 
-Wolfram Mathematica functions
------------------------------
+Wolfram Mathematica
+-------------------
+
+### Functions
 
 ```
 FindElectrostaticLambda[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}]
@@ -30,8 +32,16 @@ Returns electrostatic center X(5626) of triangle defined with Cartesian coordina
 
 ### Examples
 
-C functions
+C
+-
+
+### Functions
+
+### Examples
+
+Python
 ------
 
-Python functions
-----------------
+### Functions
+
+### Examples
