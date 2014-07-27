@@ -22,7 +22,7 @@ Finds numerical value of *lambda* parameter of triangle electrostatic center X(5
 ElectrostaticLine[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}, lamdba_]
 ```
 
-Computes a point on electrostatic line of the triangle based on the *lambda* parameter and Cartesian coordinates of triangle vertices. Returns electrostatic center X(5626) if electrostatic center's Lambda is used.
+Computes a point on electrostatic line of the triangle based on the *lambda* parameter and Cartesian coordinates of triangle vertices. Returns electrostatic center X(5626) if electrostatic center's *lambda* is used.
 
 ```
 FindElectrostaticCenter[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}]
