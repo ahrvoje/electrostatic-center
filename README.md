@@ -10,17 +10,17 @@ Center is also incorporated into Kimberling's Encyclopedia of triangle centers a
 Wolfram Mathematica functions
 -----------------------------
 
-'''
+```
 FindElectrostaticLambda[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}, *options*]
-'''
+```
 
-'''
+```
 ElectrostaticLine[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}, *options*]
-'''
+```
 
-'''
+```
 FindElectrostaticCenter[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}, *options*]
-'''
+```
 
 C functions
 ------
