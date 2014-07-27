@@ -16,13 +16,13 @@ Wolfram Mathematica
 FindElectrostaticLambda[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}]
 ```
 
-Finds numerical value of Lambda parameter of triangle electrostatic center X(5626) based on the Cartesian coordinates of triangle vertices. Default value of *Precision* option is 12 decimal places.
+Finds numerical value of *lambda* parameter of triangle electrostatic center X(5626) based on the Cartesian coordinates of triangle vertices. Default value of *Precision* option is 12 decimal places.
 
 ```
-ElectrostaticLine[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}]
+ElectrostaticLine[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}, lamdba_]
 ```
 
-Computes a point on electrostatic line of the triangle based on the Lambda parameter and Cartesian coordinates of triangle vertices. Returns electrostatic center X(5626) if electrostatic center's Lambda is used.
+Computes a point on electrostatic line of the triangle based on the *lambda* parameter and Cartesian coordinates of triangle vertices. Returns electrostatic center X(5626) if electrostatic center's Lambda is used.
 
 ```
 FindElectrostaticCenter[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}]
