@@ -32,6 +32,8 @@ Returns electrostatic center X(5626) of triangle defined with Cartesian coordina
 
 ### Examples
 
+![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/ElectrostaticCenter_MathematicaExamples.png)
+
 C
 -
 
