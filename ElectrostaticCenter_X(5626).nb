@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     19876,        548]
-NotebookOptionsPosition[     19061,        516]
-NotebookOutlinePosition[     19482,        532]
-CellTagsIndexPosition[     19439,        529]
+NotebookDataLength[     20348,        558]
+NotebookOptionsPosition[     19534,        526]
+NotebookOutlinePosition[     19952,        542]
+CellTagsIndexPosition[     19909,        539]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -192,12 +192,12 @@ Cell[BoxData[
     RowBox[{
     "based", " ", "on", " ", "the", " ", "\[Lambda]", " ", "parameter", " ", 
      "and", " ", "Cartesian", " ", "coordinates", " ", "of", " ", "triangle", 
-     " ", "vertices"}], " ", "*)"}], "\[IndentingNewLine]", 
+     " ", "vertices"}], " ", "*)"}], "\n", 
    RowBox[{"(*", " ", 
     RowBox[{"returns", " ", "electrostatic", " ", "center", " ", "X", 
      RowBox[{"(", "5626", ")"}], " ", "if", " ", "electrostatic", " ", 
      RowBox[{"center", "'"}], "s", " ", "\[Lambda]", " ", "is", " ", "used"}],
-     " ", "*)"}], "\n", 
+     " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"ElectrostaticLine", "[", 
      RowBox[{
@@ -333,14 +333,20 @@ Cell[BoxData[
      "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
-    RowBox[{"returns", " ", "electrostatic", " ", "center", " ", "X", 
-     RowBox[{"(", "5626", ")"}], " ", "of", " ", "triangle", " ", "defined", 
-     " ", "with", " ", "Cartesian", " ", "coordinates", " ", "of", " ", "its",
-      " ", "vertices"}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+    "returns", " ", "Cartesian", " ", "coordinates", " ", "of", " ", 
+     "triangle", " ", "electrostatic", " ", "center", " ", "X", 
+     RowBox[{"(", "5626", ")"}]}], " ", "*)"}], "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "triangle", " ", "is", " ", "defined", " ", "with", " ", "Cartesian", " ",
+      "coordinates", " ", "of", " ", "its", " ", "vertices"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{
     "default", " ", "value", " ", "of", " ", "Precision", " ", "option", " ", 
-     "is", " ", "12", " ", "decimal", " ", "places"}], " ", "*)"}], "\n", 
+     "is", " ", "12", " ", "decimal", " ", "places"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"FindElectrostaticCenter", "[", 
      RowBox[{
@@ -394,7 +400,8 @@ Cell[BoxData[
    3.6154505385699115`*^9}, {3.6154505969502506`*^9, 3.615450597262268*^9}, {
    3.6154506722335567`*^9, 3.6154506838762226`*^9}, {3.6154507177071576`*^9, 
    3.615450718058178*^9}, {3.615450763440773*^9, 3.6154507967156763`*^9}, {
-   3.6154511534110785`*^9, 3.6154511629786253`*^9}}]
+   3.6154511534110785`*^9, 3.6154511629786253`*^9}, {3.615458761615243*^9, 
+   3.6154587770481253`*^9}, {3.615458810079015*^9, 3.6154588217786837`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -424,8 +431,8 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-  "0.27255790691486770239736417332213526366`11.002318090125014", ",", 
-   "0.70414818972307701994526018877635729796`11.217691821264491"}], 
+  "0.27255790691486770239736417332213526334`10.95765836176716", ",", 
+   "0.70414818972307701994526018877635729791`11.150232826014571"}], 
   "}"}]], "Output",
  CellChangeTimes->{{3.6154397502338543`*^9, 3.6154397793575196`*^9}, 
    3.6154405057030644`*^9, 3.61544054199514*^9, {3.615440622518746*^9, 
@@ -434,7 +441,8 @@ Cell[BoxData[
    3.6154499245437913`*^9, 3.6154499742676353`*^9}, 3.6154503447148237`*^9, 
    3.615450419367093*^9, {3.61545045934738*^9, 3.615450475115282*^9}, {
    3.6154505160186214`*^9, 3.615450540775038*^9}, 3.6154506001834354`*^9, {
-   3.615450713304906*^9, 3.6154507578814554`*^9}, 3.6154511655657735`*^9}]
+   3.615450713304906*^9, 3.6154507578814554`*^9}, 3.6154511655657735`*^9, 
+   3.6154588436129327`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -459,7 +467,7 @@ Cell[BoxData[
   3.61545075272116*^9}}],
 
 Cell[BoxData["4.\
-01029720274300752271869005534662861037565950771297936444446441114771429639596`\
+01029720274300752271869005534662861037565950771297936444446441114771429580685`\
 50."], "Output",
  CellChangeTimes->{{3.615440850299774*^9, 3.6154408553740644`*^9}, 
    3.6154410820800314`*^9, {3.6154412127425046`*^9, 3.615441240062067*^9}, {
@@ -468,7 +476,7 @@ Cell[BoxData["4.\
    3.6154501760931787`*^9, 3.615450186688785*^9}, {3.6154503460789013`*^9, 
    3.6154503544913826`*^9}, 3.615450460656455*^9, {3.6154505180147357`*^9, 
    3.6154505422581224`*^9}, 3.6154506063557887`*^9, {3.6154506883604794`*^9, 
-   3.615450753624212*^9}, 3.615451166799844*^9}]
+   3.615450753624212*^9}, 3.615451166799844*^9, 3.6154588447559977`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -490,19 +498,21 @@ Cell[BoxData[{
    RowBox[{"FindElectrostaticCenter", "[", "triangle", "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Show", "[", 
-  RowBox[{"{", 
+  RowBox[{"{", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"Graphics", "[", 
      RowBox[{"Polygon", "[", "triangle", "]"}], "]"}], ",", 
+    "\[IndentingNewLine]", 
     RowBox[{"Graphics", "[", 
      RowBox[{"{", 
       RowBox[{
        RowBox[{"RGBColor", "[", 
         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
        RowBox[{"PointSize", "[", ".03", "]"}], ",", 
-       RowBox[{"Point", "[", "electroCenter", "]"}]}], "}"}], "]"}]}], "}"}], 
-  "]"}]}], "Input",
- CellChangeTimes->{{3.6154509989612446`*^9, 3.6154511009960804`*^9}}],
+       RowBox[{"Point", "[", "electroCenter", "]"}]}], "}"}], "]"}]}], 
+   "\[IndentingNewLine]", "}"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6154509989612446`*^9, 3.6154511009960804`*^9}, {
+  3.615458864422123*^9, 3.6154588764468107`*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{PolygonBox[{{-1, 0}, {2, 0}, {0, 2}}], 
@@ -510,14 +520,14 @@ Cell[BoxData[
     PointBox[{0.2725579069148677, 0.704148189723077}]}}]], "Output",
  CellChangeTimes->{
   3.6154510235676517`*^9, {3.6154510677481785`*^9, 3.615451101266096*^9}, 
-   3.615451168070917*^9}]
+   3.615451168070917*^9, 3.615458845702052*^9, 3.61545887852693*^9}]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1350, 710},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
-FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -533,21 +543,21 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[567, 22, 96, 1, 90, "Title"],
-Cell[666, 25, 14038, 371, 814, "Input"]
+Cell[666, 25, 14291, 378, 834, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14741, 401, 95, 1, 90, "Title"],
+Cell[14994, 408, 95, 1, 90, "Title"],
 Cell[CellGroupData[{
-Cell[14861, 406, 628, 15, 31, "Input"],
-Cell[15492, 423, 791, 13, 31, "Output"]
+Cell[15114, 413, 628, 15, 31, "Input"],
+Cell[15745, 430, 818, 14, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16320, 441, 696, 17, 31, "Input"],
-Cell[17019, 460, 688, 10, 31, "Output"]
+Cell[16600, 449, 696, 17, 31, "Input"],
+Cell[17299, 468, 712, 10, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17744, 475, 988, 29, 72, "Input"],
-Cell[18735, 506, 298, 6, 292, "Output"]
+Cell[18048, 483, 1114, 31, 132, "Input"],
+Cell[19165, 516, 341, 6, 293, "Output"]
 }, Open  ]]
 }, Open  ]]
 }
