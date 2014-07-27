@@ -47,3 +47,8 @@ Python
 ### Functions
 
 ### Examples
+
+License
+-------
+
+All material in this repository is available under MIT license.
