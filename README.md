@@ -41,6 +41,32 @@ C
 
 ### Examples
 
+```C
+#include <stdio.h>
+#include "..\electrostaticCenter_X(5626).h"
+
+int main(void)
+{
+    double cx, cy, cz;
+
+    // compute electrostatic center for triangle ABC
+    // A(-1,0), B(2,0), C(0,2)
+    electrostaticCenterXY(-1, 0, 2, 0, 0, 2, cx, cy);
+    printf("electrostatic center (x, y) = (%lf, %lf)\n", cx, cy);
+
+    // compute electrostatic center for triangle ABC
+    // A(-1,0,1), B(2,0,2), C(0,2,3)
+    electrostaticCenterXYZ(-1, 0, 1, 2, 0, 2, 0, 2, 3, cx, cy, cz);
+    printf("electrostatic center (x, y, z) = (%lf, %lf, %lf)\n", cx, cy, cz);
+
+    return 0;
+}
+
+```
+
+![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/ElectrostaticCenter_CExamples.png)
+
+
 Python
 ------
 
