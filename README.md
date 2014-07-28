@@ -50,7 +50,8 @@ int electrostaticCenterXY(double xa, double ya, double xb, double yb, double xc,
 Computes coordinates of electrostatic center based on Cartesian coordinates of triangle vertices.
 
 ```
-int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by, double bz, double cx, double cy, double cz, double& x, double& y, double& z)
+int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by, double bz,
+                           double cx, double cy, double cz, double& x, double& y, double& z)
 
 ```
 
