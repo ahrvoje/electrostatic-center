@@ -10,7 +10,7 @@ This repository containes a few routines for numerical calculation of X(5626). R
 Wolfram Mathematica
 -------------------
 
-Prototypes and examples for functions available in *ElectrostaticCenter_X(5626).nb*
+Prototypes and examples for functions available in __ElectrostaticCenter_X(5626).nb__
 
 ### Functions
 
@@ -39,7 +39,7 @@ Returns electrostatic center X(5626) of triangle defined with Cartesian coordina
 C
 -
 
-Prototypes and examples for functions available in *electrostaticCenter_X(5626).h*
+Prototypes and examples for functions available in __electrostaticCenter_X(5626).h__
 
 ### Functions
 
