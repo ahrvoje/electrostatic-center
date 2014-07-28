@@ -39,7 +39,7 @@ Returns electrostatic center X(5626) of triangle defined with Cartesian coordina
 C
 -
 
-A brief documentation for C functions available in __electrostaticCenter_X(5626).h__. These functions use approximative estimation of *lambda* parameter. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow. Approximation is described in section 6 of the article mentioned in the header of this document.
+A brief documentation for C functions available in __electrostaticCenter_X(5626).h__. These functions use approximative estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
 
 ### Functions
 
