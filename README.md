@@ -44,7 +44,8 @@ A brief documentation for C functions available in __electrostaticCenter_X(5626)
 ### Functions
 
 ```
-int electrostaticCenterXY(double xa, double ya, double xb, double yb, double xc, double yc, double& x, double& y)
+int electrostaticCenterXY(double xa, double ya, double xb, double yb, double xc, double yc,
+                          double& x, double& y)
 ```
 
 Computes coordinates of electrostatic center based on Cartesian coordinates of triangle vertices. Result is returned in variables *x*, *y* by reference.
