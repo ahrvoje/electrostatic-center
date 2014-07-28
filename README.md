@@ -10,6 +10,8 @@ This repository containes a few routines for numerical calculation of X(5626). R
 Wolfram Mathematica
 -------------------
 
+Prototypes and examples for functions available in *ElectrostaticCenter_X(5626).nb*
+
 ### Functions
 
 ```
@@ -37,7 +39,22 @@ Returns electrostatic center X(5626) of triangle defined with Cartesian coordina
 C
 -
 
+Prototypes and examples for functions available in *electrostaticCenter_X(5626).h*
+
 ### Functions
+
+```
+int electrostaticCenterXY(double xa, double ya, double xb, double yb, double xc, double yc, double& x, double& y)
+```
+
+Computes coordinates of electrostatic center based on Cartesian coordinates of triangle vertices.
+
+```
+int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by, double bz, double cx, double cy, double cz, double& x, double& y, double& z)
+
+```
+
+3D version of function for computation of triangle electrostatic center.
 
 ### Examples
 
