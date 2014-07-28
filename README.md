@@ -47,7 +47,7 @@ Prototypes and examples for functions available in __electrostaticCenter_X(5626)
 int electrostaticCenterXY(double xa, double ya, double xb, double yb, double xc, double yc, double& x, double& y)
 ```
 
-Computes coordinates of electrostatic center based on Cartesian coordinates of triangle vertices.
+Computes coordinates of electrostatic center based on Cartesian coordinates of triangle vertices. Result is returned in variables *x*, *y* by reference.
 
 ```
 int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by, double bz,
@@ -55,7 +55,7 @@ int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by
 
 ```
 
-3D version of function for computation of triangle electrostatic center.
+3D version of function for computation of triangle electrostatic center. Result is returned in variables *x*, *y*, *z* by reference.
 
 ### Examples
 
