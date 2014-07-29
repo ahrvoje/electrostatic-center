@@ -45,18 +45,18 @@ A brief documentation for C functions available in __electrostaticCenter.c__. Th
 
 ```C
 int electrostaticCenterXY(double ax, double ay, double bx, double by, double cx, double cy,
-                          double& x, double& y)
+                          double *x, double *y)
 ```
 
-Computes coordinates of electrostatic center based on Cartesian coordinates of triangle vertices. Result is returned in variables *x*, *y* by reference.
+Computes coordinates of electrostatic center based on Cartesian coordinates of triangle vertices. Result is returned in variables *x*, *y* by pointer.
 
 ```C
 int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by, double bz,
-                           double cx, double cy, double cz, double& x, double& y, double& z)
+                           double cx, double cy, double cz, double *x, double *y, double *z)
 
 ```
 
-3D version of function for computation of triangle electrostatic center. Result is returned in variables *x*, *y*, *z* by reference.
+3D version of function for computation of triangle electrostatic center. Result is returned in variables *x*, *y*, *z* by pointer.
 
 ### Examples
 
