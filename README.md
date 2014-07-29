@@ -48,7 +48,7 @@ int electrostaticCenterXY(double ax, double ay, double bx, double by, double cx,
                           double *x, double *y)
 ```
 
-Computes coordinates of electrostatic center based on Cartesian coordinates of triangle vertices. Result is returned in variables *x*, *y* by pointer.
+Computes coordinates of electrostatic center based on 2D Cartesian coordinates of triangle vertices. Result is returned in variables *x*, *y* by pointer.
 
 ```C
 int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by, double bz,
