@@ -34,7 +34,7 @@ Returns electrostatic center X(5626) of triangle defined with Cartesian coordina
 
 ### Examples
 
-![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/ElectrostaticCenter_MathematicaExamples.png)
+![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_MathematicaExamples.png)
 
 C
 -
@@ -82,7 +82,7 @@ int main(void)
 }
 ```
 
-![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/ElectrostaticCenter_CExamples.png)
+![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_CExamples.png)
 
 
 Python
@@ -113,7 +113,7 @@ print 'electrostatic center [x, y] =', electrostaticCenterXY([[-1, 0], [2, 0], [
 print 'electrostatic center [x, y, z] =', electrostaticCenterXYZ([[-1, 0, 1], [2, 0, 2], [0, 2, 3]])
 ```
 
-![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/ElectrostaticCenter_PythonExamples.png)
+![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_PythonExamples.png)
 
 License
 -------
