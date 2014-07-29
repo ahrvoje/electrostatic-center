@@ -45,15 +45,15 @@ int triangleCenterUVW(double a, double b, double c, double& u, double& v, double
 // using numerically robust approximation based on the article
 // "From electrostatic potentials to yet another triangle center", by Hrvoje Abraham & Vjekoslav Kovac, 2013.
 // http://arxiv.org/abs/1312.3176
-int electrostaticCenterXY(double xa, double ya, double xb, double yb, double xc, double yc, double& x, double& y)
+int electrostaticCenterXY(double ax, double ay, double bx, double by, double cx, double cy, double& x, double& y)
 {
     double a, b, c;
     double u, v, w;
     double ta, tb, tc;
 
-    a = sqrt(sqr(xc-xb) + sqr(yc-yb));
-    b = sqrt(sqr(xa-xc) + sqr(ya-yc));
-    c = sqrt(sqr(xb-xa) + sqr(yb-ya));
+    a = sqrt(sqr(cx-bx) + sqr(cy-by));
+    b = sqrt(sqr(ax-cx) + sqr(ay-cy));
+    c = sqrt(sqr(bx-ax) + sqr(by-ay));
 
     if (!isnormal(a) || !isnormal(b) || !isnormal(c))
         return -4;
@@ -63,15 +63,15 @@ int electrostaticCenterXY(double xa, double ya, double xb, double yb, double xc,
     if (statusUVW < 0 )
         return statusUVW;
 
-    ta = xa*xa + ya*ya - v*w;
-    tb = xb*xb + yb*yb - w*u;
-    tc = xc*xc + yc*yc - u*v;
+    ta = ax*ax + ay*ay - v*w;
+    tb = bx*bx + by*by - w*u;
+    tc = cx*cx + cy*cy - u*v;
 
     if ((ta!=0 && !isnormal(ta)) || (tb!=0 && !isnormal(tb)) || (tc!=0 && !isnormal(tc)))
         return -5;
 
-    x = 0.5 * (ta*(yb-yc) + tb*(yc-ya) + tc*(ya-yb)) / (xa*(yb-yc) + xb*(yc-ya) + xc*(ya-yb));
-    y = 0.5 * (ta*(xb-xc) + tb*(xc-xa) + tc*(xa-xb)) / (ya*(xb-xc) + yb*(xc-xa) + yc*(xa-xb));
+    x = 0.5 * (ta*(by-cy) + tb*(cy-ay) + tc*(ay-by)) / (ax*(by-cy) + bx*(cy-ay) + cx*(ay-by));
+    y = 0.5 * (ta*(bx-cx) + tb*(cx-ax) + tc*(ax-bx)) / (ay*(bx-cx) + by*(cx-ax) + cy*(ax-bx));
 
     if ((x!=0 && !isnormal(x)) || (y!=0 && !isnormal(y)))
         return -6;

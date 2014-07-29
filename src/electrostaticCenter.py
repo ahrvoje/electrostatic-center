@@ -1,4 +1,8 @@
-__author__ = 'Hrvoje Abraham, ahrvoje@gmail.com, 2014'
+#
+# electrostaticCenter.py
+#
+#  Created on: 29.07.2014.
+#      Author: Hrvoje Abraham
 
 from math import log, exp, sqrt
 
@@ -19,7 +23,7 @@ def electrostaticCenterUVW(a, b, c):
 
         return [u, v, w]
     except:
-        return [0, 0, 0]
+        raise NameError('electrostaticCenterUVW error')
 
 # computation of triangle electrostatic center X(5626)
 # using numerically robust approximation based on the article
@@ -44,7 +48,7 @@ def electrostaticCenterXY(triangle):
 
         return [x, y]
     except:
-        raise NameError('electrostaticCenterXY numerical error')
+        raise NameError('electrostaticCenterXY error')
 
 # 3D case
 def electrostaticCenterXYZ(triangle):
@@ -79,4 +83,4 @@ def electrostaticCenterXYZ(triangle):
 
         return [x, y, z]
     except:
-        raise NameError('electrostaticCenterXYZ numerical error')
+        raise NameError('electrostaticCenterXYZ error')
