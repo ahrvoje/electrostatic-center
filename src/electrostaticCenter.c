@@ -1,21 +1,19 @@
 /*
- * electrostaticCenter_X(5626).h
+ * electrostaticCenter.c
  *
  *  Created on: 11.12.2013.
  *      Author: Hrvoje Abraham
  */
 
-#ifndef ELECTROCENTER_H_
-#define ELECTROCENTER_H_
-
 #include <math.h>
+#include "electrostaticCenter.h"
 
 inline double sqr(double x)
 {
     return x*x;
 }
 
-int triangleCenterUVW(double a, double b, double c, double& u, double& v, double& w)
+int triangleCenterUVW(double a, double b, double c, double *u, double *v, double *w)
 {
     if (!isnormal(a+b+c) || !isnormal(-a+b+c) || !isnormal(a-b+c) || !isnormal(a+b-c))
         return -1;
@@ -31,21 +29,26 @@ int triangleCenterUVW(double a, double b, double c, double& u, double& v, double
     if (!isnormal(ea) || !isnormal(eb) || !isnormal(ec))
         return -2;
 
-    u = a * (1 + 2/ea);
-    v = b * (1 + 2/eb);
-    w = c * (1 + 2/ec);
+    *u = a * (1 + 2/ea);
+    *v = b * (1 + 2/eb);
+    *w = c * (1 + 2/ec);
 
-    if ((u!=0 && !isnormal(u)) || (v!=0 && !isnormal(v)) || (w!=0 && !isnormal(w)))
+    if ((*u!=0 && !isnormal(*u)) || (*v!=0 && !isnormal(*v)) || (*w!=0 && !isnormal(*w)))
         return -3;
 
     return 1;
 }
 
+// enforce C names decoration
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
+
 // computation of triangle electrostatic center X(5626)
 // using numerically robust approximation based on the article
 // "From electrostatic potentials to yet another triangle center", by Hrvoje Abraham & Vjekoslav Kovac, 2013.
 // http://arxiv.org/abs/1312.3176
-int electrostaticCenterXY(double ax, double ay, double bx, double by, double cx, double cy, double& x, double& y)
+int electrostaticCenterXY(double ax, double ay, double bx, double by, double cx, double cy, double *x, double *y)
 {
     double a, b, c;
     double u, v, w;
@@ -58,7 +61,7 @@ int electrostaticCenterXY(double ax, double ay, double bx, double by, double cx,
     if (!isnormal(a) || !isnormal(b) || !isnormal(c))
         return -4;
 
-    int statusUVW = triangleCenterUVW(a, b, c, u, v, w);
+    int statusUVW = triangleCenterUVW(a, b, c, &u, &v, &w);
 
     if (statusUVW < 0 )
         return statusUVW;
@@ -70,17 +73,17 @@ int electrostaticCenterXY(double ax, double ay, double bx, double by, double cx,
     if ((ta!=0 && !isnormal(ta)) || (tb!=0 && !isnormal(tb)) || (tc!=0 && !isnormal(tc)))
         return -5;
 
-    x = 0.5 * (ta*(by-cy) + tb*(cy-ay) + tc*(ay-by)) / (ax*(by-cy) + bx*(cy-ay) + cx*(ay-by));
-    y = 0.5 * (ta*(bx-cx) + tb*(cx-ax) + tc*(ax-bx)) / (ay*(bx-cx) + by*(cx-ax) + cy*(ax-bx));
+    *x = 0.5 * (ta*(by-cy) + tb*(cy-ay) + tc*(ay-by)) / (ax*(by-cy) + bx*(cy-ay) + cx*(ay-by));
+    *y = 0.5 * (ta*(bx-cx) + tb*(cx-ax) + tc*(ax-bx)) / (ay*(bx-cx) + by*(cx-ax) + cy*(ax-bx));
 
-    if ((x!=0 && !isnormal(x)) || (y!=0 && !isnormal(y)))
+    if ((*x!=0 && !isnormal(*x)) || (*y!=0 && !isnormal(*y)))
         return -6;
 
     return 1;
 }
 
 // 3D case
-int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by, double bz, double cx, double cy, double cz, double& x, double& y, double& z)
+int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by, double bz, double cx, double cy, double cz, double *x, double *y, double *z)
 {
     double tx, ty, tz;
     double nx, ny, nz;
@@ -106,19 +109,21 @@ int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by
     ny *= ry0;
     nz *= ry0;
 
-    int statusXY = electrostaticCenterXY(0, 0, c, 0, x0, y0, ect, ecn);
+    int statusXY = electrostaticCenterXY(0, 0, c, 0, x0, y0, &ect, &ecn);
 
     if (statusXY < 0)
         return statusXY;
 
-    x = ax + ect*tx + ecn*nx;
-    y = ay + ect*ty + ecn*ny;
-    z = az + ect*tz + ecn*nz;
+    *x = ax + ect*tx + ecn*nx;
+    *y = ay + ect*ty + ecn*ny;
+    *z = az + ect*tz + ecn*nz;
 
-    if ((x!=0 && !isnormal(x)) || (y!=0 && !isnormal(y)) || (z!=0 && !isnormal(z)))
+    if ((*x!=0 && !isnormal(*x)) || (*y!=0 && !isnormal(*y)) || (*z!=0 && !isnormal(*z)))
         return -7;
 
     return 1;
 }
 
-#endif /* ELECTROCENTER_H_ */
+#ifdef __cplusplus
+} // extern "C"
+#endif // __cplusplus

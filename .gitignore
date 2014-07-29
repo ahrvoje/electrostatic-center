@@ -21,3 +21,4 @@ electroCenter-PyTest/.idea/workspace.xml
 electroCenter-PyTest/electrostaticCenter.py
 electroCenter-PyTest/electrostaticCenter.pyc
 electroCenter-PyTest/test.py
+electroCenter-Ctest/release/electrostaticCenter.o
