@@ -43,14 +43,14 @@ A brief documentation for C functions available in __electrostaticCenter_X(5626)
 
 ### Functions
 
-```
-int electrostaticCenterXY(double xa, double ya, double xb, double yb, double xc, double yc,
+```C
+int electrostaticCenterXY(double ax, double ay, double bx, double by, double cx, double cy,
                           double& x, double& y)
 ```
 
 Computes coordinates of electrostatic center based on Cartesian coordinates of triangle vertices. Result is returned in variables *x*, *y* by reference.
 
-```
+```C
 int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by, double bz,
                            double cx, double cy, double cz, double& x, double& y, double& z)
 
@@ -80,7 +80,6 @@ int main(void)
 
     return 0;
 }
-
 ```
 
 ![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/ElectrostaticCenter_CExamples.png)
@@ -89,7 +88,21 @@ int main(void)
 Python
 ------
 
+A brief documentation for Python functions available in __electrostaticCenter.py__. These functions use approximative estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
+
 ### Functions
+
+```Python
+electrostaticCenterXY(triangle)
+```
+
+Returns electrostatic center for triangle defined as a triplet of 2D Cartesian coordinates of its vertices [[ax, ay], [bx, by], [cx, cy]].
+
+```Python
+electrostaticCenterXYZ(triangle)
+```
+
+Returns electrostatic center for triangle defined as a triplet of 3D Cartesian coordinates of its vertices [[ax, ay, az], [bx, by, bz], [cx, cy, cz]].
 
 ### Examples
 
