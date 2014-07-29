@@ -93,6 +93,15 @@ Python
 
 ### Examples
 
+```Python
+from electrostaticCenter import *
+
+print 'electrostatic center [x, y] =', electrostaticCenterXY([[-1, 0], [2, 0], [0, 2]])
+print 'electrostatic center [x, y, z] =', electrostaticCenterXYZ([[-1, 0, 1], [2, 0, 2], [0, 2, 3]])
+```
+
+![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/ElectrostaticCenter_PythonExamples.png)
+
 License
 -------
 
