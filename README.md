@@ -39,7 +39,7 @@ Returns electrostatic center X(5626) of triangle defined with Cartesian coordina
 C
 -
 
-A brief documentation for C functions available in __electrostaticCenter.h__. These functions use approximative estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
+A brief documentation for C functions available in __electrostaticCenter.c__. These functions use approximative estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
 
 ### Functions
 
@@ -62,7 +62,7 @@ int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by
 
 ```C
 #include <stdio.h>
-#include "..\electrostaticCenter_X(5626).h"
+#include "..\src\electrostaticCenter.h"
 
 int main(void)
 {
@@ -70,12 +70,12 @@ int main(void)
 
     // compute electrostatic center for triangle ABC
     // A(-1,0), B(2,0), C(0,2)
-    electrostaticCenterXY(-1, 0, 2, 0, 0, 2, cx, cy);
+    electrostaticCenterXY(-1, 0, 2, 0, 0, 2, &cx, &cy);
     printf("electrostatic center (x, y) = (%lf, %lf)\n", cx, cy);
 
     // compute electrostatic center for triangle ABC
     // A(-1,0,1), B(2,0,2), C(0,2,3)
-    electrostaticCenterXYZ(-1, 0, 1, 2, 0, 2, 0, 2, 3, cx, cy, cz);
+    electrostaticCenterXYZ(-1, 0, 1, 2, 0, 2, 0, 2, 3, &cx, &cy, &cz);
     printf("electrostatic center (x, y, z) = (%lf, %lf, %lf)\n", cx, cy, cz);
 
     return 0;
