@@ -20,13 +20,13 @@ A brief documentation for Mathematica functions available in __ElectrostaticCent
 FindElectrostaticLambda[{{ax_,ay_},{bx_,by_},{cx_,cy_}}]
 ```
 
-Finds numerical value of *lambda* parameter of triangle electrostatic center X(5626) based on the Cartesian coordinates of triangle vertices. Default value of *Precision* option is 12 decimal places.
+Finds numerical value of *lambda* parameter of triangle electrostatic center X(5626) based on 2D Cartesian coordinates of triangle vertices. Default value of *Precision* option is 12 decimal places.
 
 ```
 ElectrostaticLine[{{ax_,ay_},{bx_,by_},{cx_,cy_}}, lambda_]
 ```
 
-Computes a point on electrostatic line of the triangle based on the Cartesian coordinates of triangle vertices and *lambda* parameter. Returns electrostatic center X(5626) if its *lambda* is used.
+Computes a point on electrostatic line of the triangle based on 2D Cartesian coordinates of triangle vertices and *lambda* parameter. Returns electrostatic center X(5626) if its *lambda* is used.
 
 ```
 FindElectrostaticCenter2D[{{ax_,ay_},{bx_,by_},{cx_,cy_}}]
