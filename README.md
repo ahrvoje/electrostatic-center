@@ -7,7 +7,7 @@ Center is also listed in Kimberling's Encyclopedia of triangle centers under *X(
 
 The point was succesfully used to improve the stability and speed up the convergence of BEM methods for electrostatic problems.
 
-This repository containes a few routines for numerical calculation of X(5626). Precise routines are written in Wolfram Mathematica, with practical approximation being implemented in C and Python.
+This repository contains a few routines for numerical calculation of X(5626). Precise routines are written in Wolfram Mathematica, with practical approximation being implemented in C and Python.
 
 Wolfram Mathematica
 -------------------
