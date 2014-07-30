@@ -5,7 +5,7 @@ It is the point of maximal electrostatic potential inside a triangle having a ho
 
 Center is also listed in Kimberling's Encyclopedia of triangle centers under *X(5626) = CENTER OF ELECTROSTATIC POTENTIAL.* (http://faculty.evansville.edu/ck6/encyclopedia/ETCPart4.html)
 
-The point was succesfully used to improve the stability and speed up the convergence of BEM methods for electrostatic problems.
+The point was successfully used to improve the stability and speed up the convergence of BEM methods for electrostatic problems.
 
 This repository contains a few routines for numerical calculation of X(5626). Precise routines are written in Wolfram Mathematica, with practical approximation being implemented in C and Python.
 
@@ -47,7 +47,7 @@ Returns electrostatic center X(5626) of triangle defined with 3D Cartesian coord
 C
 -
 
-A brief documentation for C functions available in __electrostaticCenter.c__. These functions use approximative estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
+A brief documentation for C functions available in __electrostaticCenter.c__. These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
 
 ### Functions
 
@@ -96,7 +96,7 @@ int main(void)
 Python
 ------
 
-A brief documentation for Python functions available in __electrostaticCenter.py__. These functions use approximative estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
+A brief documentation for Python functions available in __electrostaticCenter.py__. These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
 
 ### Functions
 
