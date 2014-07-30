@@ -3,7 +3,6 @@
 #
 #  Created on: 29.07.2014.
 #      Author: Hrvoje Abraham
-#
 
 from math import log, exp, sqrt
 
@@ -30,9 +29,9 @@ def electrostaticCenterUVW(a, b, c):
 # using numerically robust approximation based on the article
 # "From electrostatic potentials to yet another triangle center", by Hrvoje Abraham & Vjekoslav Kovac, 2013.
 # http://arxiv.org/abs/1312.3176
-def electrostaticCenterXY(triangle2D):
+def electrostaticCenterXY(triangle):
     try:
-        [[xa, ya], [xb, yb], [xc, yc]] = triangle2D
+        [[xa, ya], [xb, yb], [xc, yc]] = triangle
 
         a = sqrt(sqr(xc-xb) + sqr(yc-yb))
         b = sqrt(sqr(xa-xc) + sqr(ya-yc))
@@ -52,9 +51,9 @@ def electrostaticCenterXY(triangle2D):
         raise NameError('electrostaticCenterXY error')
 
 # 3D case
-def electrostaticCenterXYZ(triangle3D):
+def electrostaticCenterXYZ(triangle):
     try:
-        [[ax, ay, az], [bx, by, bz], [cx, cy, cz]] = triangle3D
+        [[ax, ay, az], [bx, by, bz], [cx, cy, cz]] = triangle
 
         c = sqrt(sqr(bx-ax) + sqr(by-ay) + sqr(bz-az))
         rc = 1/c
