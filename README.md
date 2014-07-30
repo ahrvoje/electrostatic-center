@@ -98,13 +98,13 @@ A brief documentation for Python functions available in __electrostaticCenter.py
 [x, y] = electrostaticCenterXY([[ax, ay], [bx, by], [cx, cy]])
 ```
 
-Returns electrostatic center for triangle defined as a triplet of 2D Cartesian coordinates of its vertices.
+Returns electrostatic center of triangle defined as a triplet of 2D Cartesian coordinates of its vertices.
 
 ```Python
 [x, y, z] = electrostaticCenterXYZ([[ax, ay, az], [bx, by, bz], [cx, cy, cz]])
 ```
 
-Returns electrostatic center for triangle defined as a triplet of 3D Cartesian coordinates of its vertices.
+Returns electrostatic center of triangle defined as a triplet of 3D Cartesian coordinates of its vertices.
 
 ### Examples
 
