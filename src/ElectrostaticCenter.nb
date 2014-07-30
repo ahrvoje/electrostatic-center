@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     20468,        559]
-NotebookOptionsPosition[     19654,        527]
-NotebookOutlinePosition[     20072,        543]
-CellTagsIndexPosition[     20029,        540]
+NotebookDataLength[     25646,        685]
+NotebookOptionsPosition[     24718,        649]
+NotebookOutlinePosition[     25136,        665]
+CellTagsIndexPosition[     25093,        662]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -48,11 +48,11 @@ Cell[BoxData[
       RowBox[{"{", 
        RowBox[{
         RowBox[{"{", 
-         RowBox[{"xa_", ",", "ya_"}], "}"}], ",", 
+         RowBox[{"ax_", ",", "ay_"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"xb_", ",", "yb_"}], "}"}], ",", 
+         RowBox[{"bx_", ",", "by_"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"xc_", ",", "yc_"}], "}"}]}], "}"}], ",", 
+         RowBox[{"cx_", ",", "cy_"}], "}"}]}], "}"}], ",", 
       RowBox[{"OptionsPattern", "[", 
        RowBox[{"{", 
         RowBox[{"Precision", "\[Rule]", "12"}], "}"}], "]"}]}], "]"}], ":=", 
@@ -69,23 +69,23 @@ Cell[BoxData[
         RowBox[{"Norm", "[", 
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"xc", ",", "yc"}], "}"}], "-", 
+           RowBox[{"cx", ",", "cy"}], "}"}], "-", 
           RowBox[{"{", 
-           RowBox[{"xb", ",", "yb"}], "}"}]}], "]"}]}], ";", 
+           RowBox[{"bx", ",", "by"}], "}"}]}], "]"}]}], ";", 
        RowBox[{"b", "=", 
         RowBox[{"Norm", "[", 
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"xa", ",", "ya"}], "}"}], "-", 
+           RowBox[{"ax", ",", "ay"}], "}"}], "-", 
           RowBox[{"{", 
-           RowBox[{"xc", ",", "yc"}], "}"}]}], "]"}]}], ";", 
+           RowBox[{"cx", ",", "cy"}], "}"}]}], "]"}]}], ";", 
        RowBox[{"c", "=", 
         RowBox[{"Norm", "[", 
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"xb", ",", "yb"}], "}"}], "-", 
+           RowBox[{"bx", ",", "by"}], "}"}], "-", 
           RowBox[{"{", 
-           RowBox[{"xa", ",", "ya"}], "}"}]}], "]"}]}], ";", 
+           RowBox[{"ax", ",", "ay"}], "}"}]}], "]"}]}], ";", 
        "\[IndentingNewLine]", 
        RowBox[{"u", "=", 
         RowBox[{"a", "*", 
@@ -182,7 +182,7 @@ Cell[BoxData[
        "\[IndentingNewLine]", 
        RowBox[{"Return", "[", 
         RowBox[{"l", "/.", "sol"}], "]"}], ";"}]}], "\[IndentingNewLine]", 
-     "]"}]}], "\[IndentingNewLine]", "\n", 
+     "]"}]}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{
     "computes", " ", "a", " ", "point", " ", "on", " ", "electrostatic", " ", 
@@ -204,11 +204,11 @@ Cell[BoxData[
       RowBox[{"{", 
        RowBox[{
         RowBox[{"{", 
-         RowBox[{"xa_", ",", "ya_"}], "}"}], ",", 
+         RowBox[{"ax_", ",", "ay_"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"xb_", ",", "yb_"}], "}"}], ",", 
+         RowBox[{"bx_", ",", "by_"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"xc_", ",", "yc_"}], "}"}]}], "}"}], ",", "l_"}], "]"}], ":=",
+         RowBox[{"cx_", ",", "cy_"}], "}"}]}], "}"}], ",", "l_"}], "]"}], ":=",
      "\[IndentingNewLine]", 
     RowBox[{"Module", "[", 
      RowBox[{
@@ -222,23 +222,23 @@ Cell[BoxData[
         RowBox[{"Norm", "[", 
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"xc", ",", "yc"}], "}"}], "-", 
+           RowBox[{"cx", ",", "cy"}], "}"}], "-", 
           RowBox[{"{", 
-           RowBox[{"xb", ",", "yb"}], "}"}]}], "]"}]}], ";", 
+           RowBox[{"bx", ",", "by"}], "}"}]}], "]"}]}], ";", 
        RowBox[{"b", "=", 
         RowBox[{"Norm", "[", 
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"xa", ",", "ya"}], "}"}], "-", 
+           RowBox[{"ax", ",", "ay"}], "}"}], "-", 
           RowBox[{"{", 
-           RowBox[{"xc", ",", "yc"}], "}"}]}], "]"}]}], ";", 
+           RowBox[{"cx", ",", "cy"}], "}"}]}], "]"}]}], ";", 
        RowBox[{"c", "=", 
         RowBox[{"Norm", "[", 
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"xb", ",", "yb"}], "}"}], "-", 
+           RowBox[{"bx", ",", "by"}], "}"}], "-", 
           RowBox[{"{", 
-           RowBox[{"xa", ",", "ya"}], "}"}]}], "]"}]}], ";", 
+           RowBox[{"ax", ",", "ay"}], "}"}]}], "]"}]}], ";", 
        "\[IndentingNewLine]", 
        RowBox[{"u", "=", 
         RowBox[{"a", "*", 
@@ -261,69 +261,69 @@ Cell[BoxData[
        "\[IndentingNewLine]", 
        RowBox[{"ka", "=", 
         RowBox[{
-         SuperscriptBox["xa", "2"], "+", 
-         SuperscriptBox["ya", "2"], "-", 
+         SuperscriptBox["ax", "2"], "+", 
+         SuperscriptBox["ay", "2"], "-", 
          RowBox[{"v", "*", "w"}]}]}], ";", 
        RowBox[{"kb", "=", 
         RowBox[{
-         SuperscriptBox["xb", "2"], "+", 
-         SuperscriptBox["yb", "2"], "-", 
+         SuperscriptBox["bx", "2"], "+", 
+         SuperscriptBox["by", "2"], "-", 
          RowBox[{"w", "*", "u"}]}]}], ";", 
        RowBox[{"kc", "=", 
         RowBox[{
-         SuperscriptBox["xc", "2"], "+", 
-         SuperscriptBox["yc", "2"], "-", 
+         SuperscriptBox["cx", "2"], "+", 
+         SuperscriptBox["cy", "2"], "-", 
          RowBox[{"u", "*", "v"}]}]}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
        RowBox[{"dx", "=", 
         RowBox[{
          RowBox[{"ka", 
           RowBox[{"(", 
-           RowBox[{"yb", "-", "yc"}], ")"}]}], "+", 
+           RowBox[{"by", "-", "cy"}], ")"}]}], "+", 
          RowBox[{"kb", 
           RowBox[{"(", 
-           RowBox[{"yc", "-", "ya"}], ")"}]}], "+", 
+           RowBox[{"cy", "-", "ay"}], ")"}]}], "+", 
          RowBox[{"kc", 
           RowBox[{"(", 
-           RowBox[{"ya", "-", "yb"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"ay", "-", "by"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
        RowBox[{"nx", "=", 
         RowBox[{"2", 
          RowBox[{"(", 
           RowBox[{
-           RowBox[{"xa", 
+           RowBox[{"ax", 
             RowBox[{"(", 
-             RowBox[{"yb", "-", "yc"}], ")"}]}], "+", 
-           RowBox[{"xb", 
+             RowBox[{"by", "-", "cy"}], ")"}]}], "+", 
+           RowBox[{"bx", 
             RowBox[{"(", 
-             RowBox[{"yc", "-", "ya"}], ")"}]}], "+", 
-           RowBox[{"xc", 
+             RowBox[{"cy", "-", "ay"}], ")"}]}], "+", 
+           RowBox[{"cx", 
             RowBox[{"(", 
-             RowBox[{"ya", "-", "yb"}], ")"}]}]}], ")"}]}]}], ";", 
+             RowBox[{"ay", "-", "by"}], ")"}]}]}], ")"}]}]}], ";", 
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"dy", "=", 
         RowBox[{
          RowBox[{"ka", 
           RowBox[{"(", 
-           RowBox[{"xb", "-", "xc"}], ")"}]}], "+", 
+           RowBox[{"bx", "-", "cx"}], ")"}]}], "+", 
          RowBox[{"kb", 
           RowBox[{"(", 
-           RowBox[{"xc", "-", "xa"}], ")"}]}], "+", 
+           RowBox[{"cx", "-", "ax"}], ")"}]}], "+", 
          RowBox[{"kc", 
           RowBox[{"(", 
-           RowBox[{"xa", "-", "xb"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"ax", "-", "bx"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
        RowBox[{"ny", "=", 
         RowBox[{"2", 
          RowBox[{"(", 
           RowBox[{
-           RowBox[{"ya", 
+           RowBox[{"ay", 
             RowBox[{"(", 
-             RowBox[{"xb", "-", "xc"}], ")"}]}], "+", 
-           RowBox[{"yb", 
+             RowBox[{"bx", "-", "cx"}], ")"}]}], "+", 
+           RowBox[{"by", 
             RowBox[{"(", 
-             RowBox[{"xc", "-", "xa"}], ")"}]}], "+", 
-           RowBox[{"yc", 
+             RowBox[{"cx", "-", "ax"}], ")"}]}], "+", 
+           RowBox[{"cy", 
             RowBox[{"(", 
-             RowBox[{"xa", "-", "xb"}], ")"}]}]}], ")"}]}]}], ";", 
+             RowBox[{"ax", "-", "bx"}], ")"}]}]}], ")"}]}]}], ";", 
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"Return", "[", 
         RowBox[{"{", 
@@ -347,16 +347,16 @@ Cell[BoxData[
      "is", " ", "12", " ", "decimal", " ", "places"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"FindElectrostaticCenter", "[", 
+    RowBox[{"FindElectrostaticCenter2D", "[", 
      RowBox[{
       RowBox[{"{", 
        RowBox[{
         RowBox[{"{", 
-         RowBox[{"xa_", ",", "ya_"}], "}"}], ",", 
+         RowBox[{"ax_", ",", "ay_"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"xb_", ",", "yb_"}], "}"}], ",", 
+         RowBox[{"bx_", ",", "by_"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"xc_", ",", "yc_"}], "}"}]}], "}"}], ",", 
+         RowBox[{"cx_", ",", "cy_"}], "}"}]}], "}"}], ",", 
       RowBox[{"OptionsPattern", "[", 
        RowBox[{"{", 
         RowBox[{"Precision", "\[Rule]", "12"}], "}"}], "]"}]}], "]"}], ":=", 
@@ -365,24 +365,105 @@ Cell[BoxData[
       RowBox[{"{", 
        RowBox[{
         RowBox[{"{", 
-         RowBox[{"xa", ",", "ya"}], "}"}], ",", 
+         RowBox[{"ax", ",", "ay"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"xb", ",", "yb"}], "}"}], ",", 
+         RowBox[{"bx", ",", "by"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"xc", ",", "yc"}], "}"}]}], "}"}], ",", 
+         RowBox[{"cx", ",", "cy"}], "}"}]}], "}"}], ",", 
       RowBox[{"FindElectrostaticLambda", "[", 
        RowBox[{
         RowBox[{"{", 
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"xa", ",", "ya"}], "}"}], ",", 
+           RowBox[{"ax", ",", "ay"}], "}"}], ",", 
           RowBox[{"{", 
-           RowBox[{"xb", ",", "yb"}], "}"}], ",", 
+           RowBox[{"bx", ",", "by"}], "}"}], ",", 
           RowBox[{"{", 
-           RowBox[{"xc", ",", "yc"}], "}"}]}], "}"}], ",", 
+           RowBox[{"cx", ",", "cy"}], "}"}]}], "}"}], ",", 
         RowBox[{"Precision", "\[Rule]", 
-         RowBox[{"OptionValue", "[", "Precision", "]"}]}]}], "]"}]}], 
-     "]"}]}]}]}]], "Input",
+         RowBox[{"OptionValue", "[", "Precision", "]"}]}]}], "]"}]}], "]"}]}],
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"3", "D", " ", "case"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"FindElectrostaticCenter3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"ax_", ",", "ay_", ",", "az_"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"bx_", ",", "by_", ",", "bz_"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"cx_", ",", "cy_", ",", "cz_"}], "}"}]}], "}"}], ",", 
+      RowBox[{"OptionsPattern", "[", 
+       RowBox[{"{", 
+        RowBox[{"Precision", "\[Rule]", "12"}], "}"}], "]"}]}], "]"}], ":=", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "vc", ",", "c", ",", "vt", ",", "vb", ",", "x0", ",", "vn", ",", "y0", 
+        ",", "ect", ",", "ecn", ",", "x", ",", "y", ",", "z"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"vc", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"bx", "-", "ax"}], ",", 
+          RowBox[{"by", "-", "ay"}], ",", 
+          RowBox[{"bz", "-", "az"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"c", "=", 
+        RowBox[{"Norm", "[", "vc", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"vt", "=", 
+        RowBox[{"vc", "/", "c"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"vb", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"cx", "-", "ax"}], ",", 
+          RowBox[{"cy", "-", "ay"}], ",", 
+          RowBox[{"cz", "-", "az"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"x0", "=", 
+        RowBox[{"vb", ".", "vt"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"vn", "=", 
+        RowBox[{"vb", "-", 
+         RowBox[{"x0", "*", "vt"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"y0", "=", 
+        RowBox[{"Norm", "[", "vn", "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"ect", ",", "ecn"}], "}"}], "=", 
+        RowBox[{"FindElectrostaticCenter2D", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"c", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"x0", ",", "y0"}], "}"}]}], "}"}], ",", 
+          RowBox[{"Precision", "\[Rule]", 
+           RowBox[{"OptionValue", "[", "Precision", "]"}]}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"vn", "=", 
+        RowBox[{"vn", "/", "y0"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"x", ",", "y", ",", "z"}], "}"}], "=", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"ax", ",", "ay", ",", "az"}], "}"}], "+", 
+         RowBox[{"ect", "*", "vt"}], "+", 
+         RowBox[{"ecn", "*", "vn"}]}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "y", ",", "z"}], "}"}], "]"}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}]}]}]}]], "Input",
  CellChangeTimes->{{3.5920543857663813`*^9, 3.592054491065404*^9}, {
    3.59213139277493*^9, 3.592131410058919*^9}, {3.59239762321875*^9, 
    3.592397634578125*^9}, {3.615438257230459*^9, 3.6154382614837027`*^9}, {
@@ -401,7 +482,13 @@ Cell[BoxData[
    3.615450718058178*^9}, {3.615450763440773*^9, 3.6154507967156763`*^9}, {
    3.6154511534110785`*^9, 3.6154511629786253`*^9}, {3.615458761615243*^9, 
    3.6154587770481253`*^9}, {3.615458810079015*^9, 3.6154588217786837`*^9}, {
-   3.6157162039828196`*^9, 3.615716318375362*^9}}]
+   3.6157162039828196`*^9, 3.615716318375362*^9}, {3.615727379837042*^9, 
+   3.615727654219735*^9}, {3.615727706034699*^9, 3.6157278826007977`*^9}, {
+   3.6157279247302074`*^9, 3.6157279247802105`*^9}, {3.615728101997347*^9, 
+   3.6157281064216*^9}, {3.615728159903659*^9, 3.6157281645659256`*^9}, {
+   3.6157282058572874`*^9, 3.6157282273485165`*^9}, {3.6157282594103503`*^9, 
+   3.615728262088504*^9}, {3.615728398203289*^9, 3.615728411490049*^9}, {
+   3.6157292491259584`*^9, 3.6157294364756746`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -412,7 +499,7 @@ Cell["examples", "Title",
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"FindElectrostaticCenter", "[", 
+ RowBox[{"FindElectrostaticCenter2D", "[", 
   RowBox[{"{", 
    RowBox[{
     RowBox[{"{", 
@@ -426,7 +513,7 @@ Cell[BoxData[
   3.6154499290760503`*^9, 3.615449929157055*^9}, {3.6154499735745955`*^9, 
   3.6154499737146034`*^9}, {3.615450418882066*^9, 3.6154504189910717`*^9}, {
   3.6154504722071157`*^9, 3.615450474603253*^9}, {3.6154507273757105`*^9, 
-  3.615450757351425*^9}}],
+  3.615450757351425*^9}, {3.6157278505429645`*^9, 3.615727850837981*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -442,7 +529,39 @@ Cell[BoxData[
    3.615450419367093*^9, {3.61545045934738*^9, 3.615450475115282*^9}, {
    3.6154505160186214`*^9, 3.615450540775038*^9}, 3.6154506001834354`*^9, {
    3.615450713304906*^9, 3.6154507578814554`*^9}, 3.6154511655657735`*^9, 
-   3.6154588436129327`*^9}]
+   3.6154588436129327`*^9, 3.6157278513700113`*^9, 3.615727928473422*^9, 
+   3.6157281217024736`*^9, 3.615728230402691*^9, 3.6157284155442805`*^9, 
+   3.615729441343953*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindElectrostaticCenter3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "2", ",", "3"}], "}"}]}], "}"}], ",", 
+   RowBox[{"Precision", "\[Rule]", "7"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6157278981686883`*^9, 3.615727904503051*^9}, {
+  3.615728455291554*^9, 3.6157284790789146`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.33048345811858940769862252092569069845`5.879867934151754", ",", 
+   "0.67806616752564236920550991629723720619`6.270991118890709", ",", 
+   "2.00854962564423177690413243722292790464`6.714640531286173"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.6157279048590713`*^9, 3.6157279293524723`*^9}, 
+   3.6157281226245265`*^9, 3.6157282315747585`*^9, 3.615728416420331*^9, {
+   3.615728461930934*^9, 3.6157284794289346`*^9}, 3.6157294425230207`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -477,7 +596,8 @@ Cell[BoxData["4.\
    3.6154503544913826`*^9}, 3.615450460656455*^9, {3.6154505180147357`*^9, 
    3.6154505422581224`*^9}, 3.6154506063557887`*^9, {3.6154506883604794`*^9, 
    3.615450753624212*^9}, 3.615451166799844*^9, 3.6154588447559977`*^9, {
-   3.615716279211122*^9, 3.615716295227038*^9}, 3.615716333615234*^9}]
+   3.615716279211122*^9, 3.615716295227038*^9}, 3.615716333615234*^9, 
+   3.6157294433420672`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -496,7 +616,7 @@ Cell[BoxData[{
       RowBox[{"0", ",", "2"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"electroCenter", "=", 
-   RowBox[{"FindElectrostaticCenter", "[", "triangle", "]"}]}], 
+   RowBox[{"FindElectrostaticCenter2D", "[", "triangle", "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Show", "[", 
   RowBox[{"{", "\[IndentingNewLine]", 
@@ -513,7 +633,8 @@ Cell[BoxData[{
        RowBox[{"Point", "[", "electroCenter", "]"}]}], "}"}], "]"}]}], 
    "\[IndentingNewLine]", "}"}], "]"}]}], "Input",
  CellChangeTimes->{{3.6154509989612446`*^9, 3.6154511009960804`*^9}, {
-  3.615458864422123*^9, 3.6154588764468107`*^9}}],
+  3.615458864422123*^9, 3.6154588764468107`*^9}, {3.6157283013517494`*^9, 
+  3.6157283016677675`*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{PolygonBox[{{-1, 0}, {2, 0}, {0, 2}}], 
@@ -521,7 +642,8 @@ Cell[BoxData[
     PointBox[{0.2725579069148677, 0.704148189723077}]}}]], "Output",
  CellChangeTimes->{
   3.6154510235676517`*^9, {3.6154510677481785`*^9, 3.615451101266096*^9}, 
-   3.615451168070917*^9, 3.615458845702052*^9, 3.61545887852693*^9}]
+   3.615451168070917*^9, 3.615458845702052*^9, 3.61545887852693*^9, {
+   3.6157282983455772`*^9, 3.61572830207279*^9}, 3.615729444418129*^9}]
 }, Open  ]]
 }, Open  ]]
 },
@@ -544,21 +666,25 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[567, 22, 96, 1, 90, "Title"],
-Cell[666, 25, 14339, 378, 834, "Input"]
+Cell[666, 25, 17994, 465, 1234, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15042, 408, 95, 1, 90, "Title"],
+Cell[18697, 495, 95, 1, 90, "Title"],
 Cell[CellGroupData[{
-Cell[15162, 413, 628, 15, 31, "Input"],
-Cell[15793, 430, 818, 14, 31, "Output"]
+Cell[18817, 500, 678, 15, 31, "Input"],
+Cell[19498, 517, 964, 16, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16648, 449, 696, 17, 31, "Input"],
-Cell[17347, 468, 784, 11, 64, "Output"]
+Cell[20499, 538, 529, 14, 31, "Input"],
+Cell[21031, 554, 488, 9, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18168, 484, 1114, 31, 132, "Input"],
-Cell[19285, 517, 341, 6, 260, "Output"]
+Cell[21556, 568, 696, 17, 31, "Input"],
+Cell[22255, 587, 812, 12, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23104, 604, 1169, 32, 132, "Input"],
+Cell[24276, 638, 414, 7, 293, "Output"]
 }, Open  ]]
 }, Open  ]]
 }

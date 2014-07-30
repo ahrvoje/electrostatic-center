@@ -10,9 +10,17 @@ from math import log, exp, sqrt
 def sqr(x):
     return x*x
 
+def electrostaticLambdaApprox(a, b, c):
+    try:
+        l = 3*log(a+b+c) - log(-a+b+c) - log(a-b+c) - log(a+b-c) + 3*log((2+sqrt(3))/3)
+        return l
+    except:
+        raise NameError('electrostaticLambdaApprox error')
+
 def electrostaticCenterUVW(a, b, c):
     try:
-        k = 2 * (3*log(a+b+c) - log(-a+b+c) - log(a-b+c) - log(a+b-c) + 3*log((2+sqrt(3))/3)) / (a+b+c);
+        l = electrostaticLambdaApprox(a, b, c)
+        k = 2*l / (a+b+c)
 
         ea = exp(k*a) - 1
         eb = exp(k*b) - 1
@@ -30,7 +38,7 @@ def electrostaticCenterUVW(a, b, c):
 # using numerically robust approximation based on the article
 # "From electrostatic potentials to yet another triangle center", by Hrvoje Abraham & Vjekoslav Kovac, 2013.
 # http://arxiv.org/abs/1312.3176
-def electrostaticCenterXY(triangle2D):
+def electrostaticCenter2D(triangle2D):
     try:
         [[xa, ya], [xb, yb], [xc, yc]] = triangle2D
 
@@ -49,10 +57,10 @@ def electrostaticCenterXY(triangle2D):
 
         return [x, y]
     except:
-        raise NameError('electrostaticCenterXY error')
+        raise NameError('electrostaticCenter2D error')
 
 # 3D case
-def electrostaticCenterXYZ(triangle3D):
+def electrostaticCenter3D(triangle3D):
     try:
         [[ax, ay, az], [bx, by, bz], [cx, cy, cz]] = triangle3D
 
@@ -76,7 +84,7 @@ def electrostaticCenterXYZ(triangle3D):
         ny *= ry0
         nz *= ry0
 
-        [ect, ecn] = electrostaticCenterXY([[0, 0], [c, 0], [x0, y0]])
+        [ect, ecn] = electrostaticCenter2D([[0, 0], [c, 0], [x0, y0]])
 
         x = ax + ect*tx + ecn*nx
         y = ay + ect*ty + ecn*ny
@@ -84,4 +92,4 @@ def electrostaticCenterXYZ(triangle3D):
 
         return [x, y, z]
     except:
-        raise NameError('electrostaticCenterXYZ error')
+        raise NameError('electrostaticCenter3D error')

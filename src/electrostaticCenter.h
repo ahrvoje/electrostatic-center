@@ -17,10 +17,10 @@ extern "C" {
 // using numerically robust approximation based on the article
 // "From electrostatic potentials to yet another triangle center", by Hrvoje Abraham & Vjekoslav Kovac, 2013.
 // http://arxiv.org/abs/1312.3176
-int electrostaticCenterXY(double ax, double ay, double bx, double by, double cx, double cy, double *x, double *y);
+int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx, double cy, double *x, double *y);
 
 // 3D case
-int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by, double bz, double cx, double cy, double cz, double *x, double *y, double *z);
+int electrostaticCenter3D(double ax, double ay, double az, double bx, double by, double bz, double cx, double cy, double cz, double *x, double *y, double *z);
 
 #ifdef __cplusplus
 } // extern "C"
