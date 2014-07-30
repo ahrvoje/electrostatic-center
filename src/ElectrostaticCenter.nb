@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     20348,        558]
-NotebookOptionsPosition[     19534,        526]
-NotebookOutlinePosition[     19952,        542]
-CellTagsIndexPosition[     19909,        539]
+NotebookDataLength[     20468,        559]
+NotebookOptionsPosition[     19654,        527]
+NotebookOutlinePosition[     20072,        543]
+CellTagsIndexPosition[     20029,        540]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -182,7 +182,7 @@ Cell[BoxData[
        "\[IndentingNewLine]", 
        RowBox[{"Return", "[", 
         RowBox[{"l", "/.", "sol"}], "]"}], ";"}]}], "\[IndentingNewLine]", 
-     "]"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     "]"}]}], "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", " ", 
     RowBox[{
     "computes", " ", "a", " ", "point", " ", "on", " ", "electrostatic", " ", 
@@ -192,7 +192,7 @@ Cell[BoxData[
     RowBox[{
     "based", " ", "on", " ", "the", " ", "\[Lambda]", " ", "parameter", " ", 
      "and", " ", "Cartesian", " ", "coordinates", " ", "of", " ", "triangle", 
-     " ", "vertices"}], " ", "*)"}], "\n", 
+     " ", "vertices"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{"returns", " ", "electrostatic", " ", "center", " ", "X", 
      RowBox[{"(", "5626", ")"}], " ", "if", " ", "electrostatic", " ", 
@@ -330,13 +330,12 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"dx", "/", "nx"}], ",", 
           RowBox[{"dy", "/", "ny"}]}], "}"}], "]"}], ";"}]}], 
-     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "]"}]}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{
     "returns", " ", "Cartesian", " ", "coordinates", " ", "of", " ", 
      "triangle", " ", "electrostatic", " ", "center", " ", "X", 
-     RowBox[{"(", "5626", ")"}]}], " ", "*)"}], "\n", 
+     RowBox[{"(", "5626", ")"}]}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{
     "triangle", " ", "is", " ", "defined", " ", "with", " ", "Cartesian", " ",
@@ -401,7 +400,8 @@ Cell[BoxData[
    3.6154506722335567`*^9, 3.6154506838762226`*^9}, {3.6154507177071576`*^9, 
    3.615450718058178*^9}, {3.615450763440773*^9, 3.6154507967156763`*^9}, {
    3.6154511534110785`*^9, 3.6154511629786253`*^9}, {3.615458761615243*^9, 
-   3.6154587770481253`*^9}, {3.615458810079015*^9, 3.6154588217786837`*^9}}]
+   3.6154587770481253`*^9}, {3.615458810079015*^9, 3.6154588217786837`*^9}, {
+   3.6157162039828196`*^9, 3.615716318375362*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -476,7 +476,8 @@ Cell[BoxData["4.\
    3.6154501760931787`*^9, 3.615450186688785*^9}, {3.6154503460789013`*^9, 
    3.6154503544913826`*^9}, 3.615450460656455*^9, {3.6154505180147357`*^9, 
    3.6154505422581224`*^9}, 3.6154506063557887`*^9, {3.6154506883604794`*^9, 
-   3.615450753624212*^9}, 3.615451166799844*^9, 3.6154588447559977`*^9}]
+   3.615450753624212*^9}, 3.615451166799844*^9, 3.6154588447559977`*^9, {
+   3.615716279211122*^9, 3.615716295227038*^9}, 3.615716333615234*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -543,21 +544,21 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[567, 22, 96, 1, 90, "Title"],
-Cell[666, 25, 14291, 378, 834, "Input"]
+Cell[666, 25, 14339, 378, 834, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14994, 408, 95, 1, 90, "Title"],
+Cell[15042, 408, 95, 1, 90, "Title"],
 Cell[CellGroupData[{
-Cell[15114, 413, 628, 15, 31, "Input"],
-Cell[15745, 430, 818, 14, 31, "Output"]
+Cell[15162, 413, 628, 15, 31, "Input"],
+Cell[15793, 430, 818, 14, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16600, 449, 696, 17, 31, "Input"],
-Cell[17299, 468, 712, 10, 31, "Output"]
+Cell[16648, 449, 696, 17, 31, "Input"],
+Cell[17347, 468, 784, 11, 64, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18048, 483, 1114, 31, 132, "Input"],
-Cell[19165, 516, 341, 6, 293, "Output"]
+Cell[18168, 484, 1114, 31, 132, "Input"],
+Cell[19285, 517, 341, 6, 260, "Output"]
 }, Open  ]]
 }, Open  ]]
 }

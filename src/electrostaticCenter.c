@@ -13,14 +13,31 @@ inline double sqr(double x)
     return x*x;
 }
 
-int triangleCenterUVW(double a, double b, double c, double *u, double *v, double *w)
+// enforce C names decoration
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
+
+int electrostaticLambdaApprox(double a, double b, double c, double *lambda)
 {
-    if (!isnormal(a+b+c) || !isnormal(-a+b+c) || !isnormal(a-b+c) || !isnormal(a+b-c))
+    *lambda = 3*log(a+b+c) - log(-a+b+c) - log(a-b+c) - log(a+b-c) + 3*log((2+sqrt(3))/3);
+
+    if (*lambda!=0 && !isnormal(*lambda))
         return -1;
 
-    double k, ea, eb, ec;
+    return 1;
+}
 
-    k = 2 * (3*log(a+b+c) - log(-a+b+c) - log(a-b+c) - log(a+b-c) + 3*log((2+sqrt(3))/3)) / (a+b+c);
+int electrostaticCenterUVW(double a, double b, double c, double *u, double *v, double *w)
+{
+    double lambda, k, ea, eb, ec;
+
+    int statusLambda = electrostaticLambdaApprox(a, b, c, &lambda);
+
+    if (statusLambda < 0)
+        return statusLambda;
+
+    k = 2*lambda / (a+b+c);
 
     ea = exp(k*a) - 1;
     eb = exp(k*b) - 1;
@@ -39,11 +56,6 @@ int triangleCenterUVW(double a, double b, double c, double *u, double *v, double
     return 1;
 }
 
-// enforce C names decoration
-#ifdef __cplusplus
-extern "C" {
-#endif // __cplusplus
-
 // computation of triangle electrostatic center X(5626)
 // using numerically robust approximation based on the article
 // "From electrostatic potentials to yet another triangle center", by Hrvoje Abraham & Vjekoslav Kovac, 2013.
@@ -61,7 +73,7 @@ int electrostaticCenterXY(double ax, double ay, double bx, double by, double cx,
     if (!isnormal(a) || !isnormal(b) || !isnormal(c))
         return -4;
 
-    int statusUVW = triangleCenterUVW(a, b, c, &u, &v, &w);
+    int statusUVW = electrostaticCenterUVW(a, b, c, &u, &v, &w);
 
     if (statusUVW < 0 )
         return statusUVW;
@@ -103,23 +115,28 @@ int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by
     nz = cz-az - x0*tz;
 
     y0 = sqrt(sqr(nx) + sqr(ny) + sqr(nz));
-    ry0 = 1 / y0;
 
-    nx *= ry0;
-    ny *= ry0;
-    nz *= ry0;
+    // c OR y0 must not be 0
+    if (!isnormal(c) || (x0!=0 && !isnormal(x0)) || !isnormal(y0))
+        return -7;
 
     int statusXY = electrostaticCenterXY(0, 0, c, 0, x0, y0, &ect, &ecn);
 
     if (statusXY < 0)
         return statusXY;
 
+    ry0 = 1/y0;
+
+    nx *= ry0;
+    ny *= ry0;
+    nz *= ry0;
+
     *x = ax + ect*tx + ecn*nx;
     *y = ay + ect*ty + ecn*ny;
     *z = az + ect*tz + ecn*nz;
 
     if ((*x!=0 && !isnormal(*x)) || (*y!=0 && !isnormal(*y)) || (*z!=0 && !isnormal(*z)))
-        return -7;
+        return -8;
 
     return 1;
 }
