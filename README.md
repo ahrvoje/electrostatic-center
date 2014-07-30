@@ -17,22 +17,28 @@ A brief documentation for Mathematica functions available in __ElectrostaticCent
 ### Functions
 
 ```
-FindElectrostaticLambda[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}]
+FindElectrostaticLambda[{{ax_,ay_},{bx_,by_},{cx_,cy_}}]
 ```
 
 Finds numerical value of *lambda* parameter of triangle electrostatic center X(5626) based on the Cartesian coordinates of triangle vertices. Default value of *Precision* option is 12 decimal places.
 
 ```
-ElectrostaticLine[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}, lambda_]
+ElectrostaticLine[{{ax_,ay_},{bx_,by_},{cx_,cy_}}, lambda_]
 ```
 
 Computes a point on electrostatic line of the triangle based on the Cartesian coordinates of triangle vertices and *lambda* parameter. Returns electrostatic center X(5626) if its *lambda* is used.
 
 ```
-FindElectrostaticCenter[{{xa_,ya_},{xb_,yb_},{xc_,yc_}}]
+FindElectrostaticCenter2D[{{ax_,ay_},{bx_,by_},{cx_,cy_}}]
 ```
 
-Returns electrostatic center X(5626) of triangle defined with Cartesian coordinates of its vertices. Default value of *Precision* option is 12 decimal places.
+Returns electrostatic center X(5626) of triangle defined with 2D Cartesian coordinates of its vertices. Default value of *Precision* option is 12 decimal places.
+
+```
+FindElectrostaticCenter3D[{{ax_,ay_,az_},{bx_,by_,bz_},{cx_,cy_,cz_}}]
+```
+
+Returns electrostatic center X(5626) of triangle defined with 3D Cartesian coordinates of its vertices. Default value of *Precision* option is 12 decimal places.
 
 ### Examples
 
@@ -46,14 +52,14 @@ A brief documentation for C functions available in __electrostaticCenter.c__. Th
 ### Functions
 
 ```C
-int electrostaticCenterXY(double ax, double ay, double bx, double by, double cx, double cy,
+int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx, double cy,
                           double *x, double *y)
 ```
 
 Computes coordinates of electrostatic center based on 2D Cartesian coordinates of triangle vertices. Result is returned in variables *x*, *y* by pointer.
 
 ```C
-int electrostaticCenterXYZ(double ax, double ay, double az, double bx, double by, double bz,
+int electrostaticCenter3D(double ax, double ay, double az, double bx, double by, double bz,
                            double cx, double cy, double cz, double *x, double *y, double *z)
 
 ```
@@ -72,12 +78,12 @@ int main(void)
 
     // compute electrostatic center for triangle ABC
     // A(-1,0), B(2,0), C(0,2)
-    electrostaticCenterXY(-1, 0, 2, 0, 0, 2, &cx, &cy);
+    electrostaticCenter2D(-1, 0, 2, 0, 0, 2, &cx, &cy);
     printf("electrostatic center (x, y) = (%lf, %lf)\n", cx, cy);
 
     // compute electrostatic center for triangle ABC
     // A(-1,0,1), B(2,0,2), C(0,2,3)
-    electrostaticCenterXYZ(-1, 0, 1, 2, 0, 2, 0, 2, 3, &cx, &cy, &cz);
+    electrostaticCenter3D(-1, 0, 1, 2, 0, 2, 0, 2, 3, &cx, &cy, &cz);
     printf("electrostatic center (x, y, z) = (%lf, %lf, %lf)\n", cx, cy, cz);
 
     return 0;
@@ -95,13 +101,13 @@ A brief documentation for Python functions available in __electrostaticCenter.py
 ### Functions
 
 ```Python
-[x, y] = electrostaticCenterXY([[ax, ay], [bx, by], [cx, cy]])
+[x, y] = electrostaticCenter2D([[ax, ay], [bx, by], [cx, cy]])
 ```
 
 Returns electrostatic center of triangle defined as a triplet of 2D Cartesian coordinates of its vertices.
 
 ```Python
-[x, y, z] = electrostaticCenterXYZ([[ax, ay, az], [bx, by, bz], [cx, cy, cz]])
+[x, y, z] = electrostaticCenter3D([[ax, ay, az], [bx, by, bz], [cx, cy, cz]])
 ```
 
 Returns electrostatic center of triangle defined as a triplet of 3D Cartesian coordinates of its vertices.
@@ -111,8 +117,8 @@ Returns electrostatic center of triangle defined as a triplet of 3D Cartesian co
 ```Python
 from electrostaticCenter import *
 
-print 'electrostatic center [x, y] =', electrostaticCenterXY([[-1, 0], [2, 0], [0, 2]])
-print 'electrostatic center [x, y, z] =', electrostaticCenterXYZ([[-1, 0, 1], [2, 0, 2], [0, 2, 3]])
+print 'electrostatic center [x, y] =', electrostaticCenter2D([[-1, 0], [2, 0], [0, 2]])
+print 'electrostatic center [x, y, z] =', electrostaticCenter3D([[-1, 0, 1], [2, 0, 2], [0, 2, 3]])
 ```
 
 ![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_PythonExamples.png)
