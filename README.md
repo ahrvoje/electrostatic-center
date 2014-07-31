@@ -52,7 +52,6 @@ A brief documentation for C functions available in __electrostaticCenter.c__. Th
 ### Functions
 
 #### electrostaticCenter2D
-_Description:_   
 Computes coordinates of electrostatic center based on 2D Cartesian coordinates of triangle vertices.
 
 _Syntax:_
@@ -69,8 +68,6 @@ _Return value:_
 *< 0* - if some calculation problem occured, it can vary between -8 and -1 depending on which step failed
 
 #### electrostaticCenter3D
-
-_Description:_   
 Computes coordinates of electrostatic center based on 3D Cartesian coordinates of triangle vertices.
 
 _Syntax:_
