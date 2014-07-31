@@ -65,7 +65,7 @@ _Parameters:_
 
 _Return value:_   
 *1* - if calculation is successfully executed   
-*< 0* - if some calculation problem occured, it can vary between -8 and -1 depending on which step failed
+*< 0* - if some calculation problem occured, it can vary between -6 and -1 depending on which step failed
 
 #### electrostaticCenter3D
 Computes coordinates of electrostatic center based on 3D Cartesian coordinates of triangle vertices.
