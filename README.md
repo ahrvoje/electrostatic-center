@@ -42,7 +42,7 @@ Returns electrostatic center X(5626) of triangle defined with 3D Cartesian coord
 
 ### Example
 
-![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_MathematicaExamples.png)
+![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_MathematicaExample.png)
 
 C
 -
@@ -61,8 +61,8 @@ int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx,
                           double* x, double* y)
 ```
 _Parameters:_   
-*ax, ay, bx, by, cx, cy* - Cartesian coordinates of vertices of triangle ABC   
-*x, y* - pointers to result variables for electrostatic center Cartesian coordinates
+*ax, ay, bx, by, cx, cy* - Cartesian coordinates of ABC triangle vertices   
+*x, y* - pointers to result variables for Cartesian coordinates of electrostatic center
 
 _Return value:_   
 *1* - if calculation is successfully executed   
@@ -71,7 +71,7 @@ _Return value:_
 #### electrostaticCenter3D
 
 _Description:_   
-Computes coordinates of electrostatic center based on #D Cartesian coordinates of triangle vertices.
+Computes coordinates of electrostatic center based on 3D Cartesian coordinates of triangle vertices.
 
 _Syntax:_
 ```C
@@ -79,8 +79,8 @@ int electrostaticCenter3D(double ax, double ay, double az, double bx, double by,
                           double cx, double cy, double cz, double *x, double *y, double *z)
 ```
 _Parameters:_   
-*ax, ay, bx, by, cx, cy* - Cartesian coordinates of vertices of triangle ABC   
-*x, y* - pointers to result variables for electrostatic center Cartesian coordinates
+*ax, ay, bx, by, cx, cy* - Cartesian coordinates of ABC triangle vertices   
+*x, y* - pointers to result variables for Cartesian coordinates of electrostatic center
 
 _Return value:_   
 *1* - if calculation is successfully executed   
@@ -110,7 +110,7 @@ int main(void)
 }
 ```
 
-![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_CExamples.png)
+![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_CExample.png)
 
 
 Python
@@ -141,7 +141,7 @@ print 'electrostatic center [x, y] =', electrostaticCenter2D([[-1, 0], [2, 0], [
 print 'electrostatic center [x, y, z] =', electrostaticCenter3D([[-1, 0, 1], [2, 0, 2], [0, 2, 3]])
 ```
 
-![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_PythonExamples.png)
+![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_PythonExample.png)
 
 License
 -------
