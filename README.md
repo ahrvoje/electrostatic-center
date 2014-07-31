@@ -40,7 +40,7 @@ FindElectrostaticCenter3D[{{ax_,ay_,az_},{bx_,by_,bz_},{cx_,cy_,cz_}}]
 
 Returns electrostatic center X(5626) of triangle defined with 3D Cartesian coordinates of its vertices. Default value of *Precision* option is 12 decimal places.
 
-### Examples
+### Example
 
 ![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_MathematicaExamples.png)
 
@@ -51,12 +51,23 @@ A brief documentation for C functions available in __electrostaticCenter.c__. Th
 
 ### Functions
 
+#### electrostaticCenter2D
+
+_Description:_ Computes coordinates of electrostatic center based on 2D Cartesian coordinates of triangle vertices.
+
+_Syntax:_
 ```C
 int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx, double cy,
-                          double *x, double *y)
+                          double* x, double* y)
 ```
 
-Computes coordinates of electrostatic center based on 2D Cartesian coordinates of triangle vertices. Result is returned in variables *x*, *y* by pointer.
+_Parameters:_
+*ax, ay, bx, by, cx, cy* - Cartesian coordinates of vertices of triangle ABC
+*x, y* - pointers to return variable for electrostatic center Cartesian coordinates
+
+_Return value:_
+*1* - if calculation is successfully excuted
+*< 0* - if some calculation problem occured, it can vary between -8 and -1 depending on the step which failed
 
 ```C
 int electrostaticCenter3D(double ax, double ay, double az, double bx, double by, double bz,
@@ -66,7 +77,7 @@ int electrostaticCenter3D(double ax, double ay, double az, double bx, double by,
 
 3D version of function for computation of triangle electrostatic center. Result is returned in variables *x*, *y*, *z* by pointer.
 
-### Examples
+### Example
 
 ```C
 #include <stdio.h>
@@ -112,7 +123,7 @@ Returns electrostatic center of triangle defined as a triplet of 2D Cartesian co
 
 Returns electrostatic center of triangle defined as a triplet of 3D Cartesian coordinates of its vertices.
 
-### Examples
+### Example
 
 ```Python
 from electrostaticCenter import *
