@@ -15,7 +15,6 @@ Wolfram Mathematica
 A brief documentation for Mathematica functions available in __ElectrostaticCenter.nb__
 
 ### Functions
-
 ```
 FindElectrostaticLambda[{{ax_,ay_},{bx_,by_},{cx_,cy_}}]
 ```
@@ -84,24 +83,23 @@ _Return value:_
 *< 0* - if calculation failed, it can vary between -8 and -1 depending on where the problem occurred
 
 ### Example
-
 ```C
 #include <stdio.h>
 #include "..\src\electrostaticCenter.h"
 
 int main(void)
 {
-    double cx, cy, cz;
+    double x, y, z;
 
     // compute electrostatic center for triangle ABC
     // A(-1,0), B(2,0), C(0,2)
-    electrostaticCenter2D(-1, 0, 2, 0, 0, 2, &cx, &cy);
-    printf("electrostatic center (x, y) = (%lf, %lf)\n", cx, cy);
+    electrostaticCenter2D(-1, 0, 2, 0, 0, 2, &x, &y);
+    printf("electrostatic center (x, y) = (%lf, %lf)\n", x, y);
 
     // compute electrostatic center for triangle ABC
     // A(-1,0,1), B(2,0,2), C(0,2,3)
-    electrostaticCenter3D(-1, 0, 1, 2, 0, 2, 0, 2, 3, &cx, &cy, &cz);
-    printf("electrostatic center (x, y, z) = (%lf, %lf, %lf)\n", cx, cy, cz);
+    electrostaticCenter3D(-1, 0, 1, 2, 0, 2, 0, 2, 3, &x, &y, &z);
+    printf("electrostatic center (x, y, z) = (%lf, %lf, %lf)\n", x, y, z);
 
     return 0;
 }
@@ -116,7 +114,6 @@ Python
 A brief documentation for Python functions available in __electrostaticCenter.py__. These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
 
 ### Functions
-
 ```Python
 [x, y] = electrostaticCenter2D([[ax, ay], [bx, by], [cx, cy]])
 ```
@@ -130,7 +127,6 @@ Returns electrostatic center of triangle defined as a triplet of 2D Cartesian co
 Returns electrostatic center of triangle defined as a triplet of 3D Cartesian coordinates of its vertices.
 
 ### Example
-
 ```Python
 from electrostaticCenter import *
 
@@ -142,5 +138,4 @@ print 'electrostatic center [x, y, z] =', electrostaticCenter3D([[-1, 0, 1], [2,
 
 License
 -------
-
 All material in this repository is available under MIT license.
