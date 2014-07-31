@@ -76,7 +76,7 @@ Computes coordinates of electrostatic center based on 3D Cartesian coordinates o
 _Syntax:_
 ```C
 int electrostaticCenter3D(double ax, double ay, double az, double bx, double by, double bz,
-                          double cx, double cy, double cz, double *x, double *y, double *z)
+                          double cx, double cy, double cz, double* x, double* y, double* z)
 ```
 _Parameters:_   
 *ax, ay, bx, by, cx, cy* - Cartesian coordinates of ABC triangle vertices   
