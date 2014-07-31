@@ -61,8 +61,8 @@ int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx,
                           double* x, double* y)
 ```
 _Parameters:_   
-*ax, ay, bx, by, cx, cy* - Cartesian coordinates of ABC triangle vertices   
-*x, y* - pointers to result variables for Cartesian coordinates of electrostatic center
+*ax, ay, bx, by, cx, cy* - 2D Cartesian coordinates of ABC triangle vertices   
+*x, y* - pointers to result variables for 2D Cartesian coordinates of electrostatic center
 
 _Return value:_   
 *1* - if calculation is successfully executed   
@@ -79,8 +79,8 @@ int electrostaticCenter3D(double ax, double ay, double az, double bx, double by,
                           double cx, double cy, double cz, double* x, double* y, double* z)
 ```
 _Parameters:_   
-*ax, ay, bx, by, cx, cy* - Cartesian coordinates of ABC triangle vertices   
-*x, y* - pointers to result variables for Cartesian coordinates of electrostatic center
+*ax, ay, az, bx, by, bz, cx, cy, cz* - 3D Cartesian coordinates of ABC triangle vertices   
+*x, y, z* - pointers to result variables for 3D Cartesian coordinates of electrostatic center
 
 _Return value:_   
 *1* - if calculation is successfully executed   
