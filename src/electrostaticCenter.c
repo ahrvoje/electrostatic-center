@@ -18,7 +18,7 @@ inline double sqr(double x)
     return x*x;
 }
 
-inline int electrostaticLambdaApprox(double a, double b, double c, double *lambda)
+inline int electrostaticLambdaApprox(double a, double b, double c, double* lambda)
 {
     *lambda = 3*log(a+b+c) - log(-a+b+c) - log(a-b+c) - log(a+b-c) + 3*log((2+sqrt(3))/3);
 
@@ -28,7 +28,7 @@ inline int electrostaticLambdaApprox(double a, double b, double c, double *lambd
     return 1;
 }
 
-int electrostaticCenterUVW(double a, double b, double c, double *u, double *v, double *w)
+int electrostaticCenterUVW(double a, double b, double c, double* u, double* v, double* w)
 {
     double lambda, k, ea, eb, ec;
 
@@ -60,7 +60,7 @@ int electrostaticCenterUVW(double a, double b, double c, double *u, double *v, d
 // using numerically robust approximation based on the article
 // "From electrostatic potentials to yet another triangle center", by Hrvoje Abraham & Vjekoslav Kovac, 2013.
 // http://arxiv.org/abs/1312.3176
-int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx, double cy, double *x, double *y)
+int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx, double cy, double* x, double* y)
 {
     double a, b, c;
     double u, v, w;
@@ -95,7 +95,7 @@ int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx,
 }
 
 // 3D case
-int electrostaticCenter3D(double ax, double ay, double az, double bx, double by, double bz, double cx, double cy, double cz, double *x, double *y, double *z)
+int electrostaticCenter3D(double ax, double ay, double az, double bx, double by, double bz, double cx, double cy, double cz, double* x, double* y, double* z)
 {
     double tx, ty, tz;
     double nx, ny, nz;
