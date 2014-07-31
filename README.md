@@ -52,38 +52,37 @@ A brief documentation for C functions available in __electrostaticCenter.c__. Th
 ### Functions
 
 #### electrostaticCenter2D
-
 _Description:_   
 Computes coordinates of electrostatic center based on 2D Cartesian coordinates of triangle vertices.
-
-_Syntax:_   
+_Syntax:_
 ```C
 int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx, double cy,
                           double* x, double* y)
 ```
+_Parameters:_   
+*ax, ay, bx, by, cx, cy* - Cartesian coordinates of vertices of triangle ABC   
+*x, y* - pointers to result variables for electrostatic center Cartesian coordinates
+_Return value:_   
+*1* - if calculation is successfully executed   
+*< 0* - if some calculation problem occured, it can vary between -8 and -1 depending on which step failed
 
+#### electrostaticCenter3D
+
+_Description:_   
+Computes coordinates of electrostatic center based on #D Cartesian coordinates of triangle vertices.
+
+_Syntax:_
+```C
+int electrostaticCenter3D(double ax, double ay, double az, double bx, double by, double bz,
+                          double cx, double cy, double cz, double *x, double *y, double *z)
+```
 _Parameters:_   
 *ax, ay, bx, by, cx, cy* - Cartesian coordinates of vertices of triangle ABC   
 *x, y* - pointers to result variables for electrostatic center Cartesian coordinates
 
 _Return value:_   
-*1* - if calculation is successfully excuted   
-*< 0* - if some calculation problem occured, it can vary between -8 and -1 depending on the step which failed
-
-#### electrostaticCenter3D
-
-
-_Description:_   
-Computes coordinates of electrostatic center based on 2D Cartesian coordinates of triangle vertices.
-
-_Syntax:_   
-```C
-int electrostaticCenter3D(double ax, double ay, double az, double bx, double by, double bz,
-                          double cx, double cy, double cz, double *x, double *y, double *z)
-
-```
-
-3D version of function for computation of triangle electrostatic center. Result is returned in variables *x*, *y*, *z* by pointer.
+*1* - if calculation is successfully executed   
+*< 0* - if some calculation problem occured, it can vary between -8 and -1 depending on which step failed
 
 ### Example
 
