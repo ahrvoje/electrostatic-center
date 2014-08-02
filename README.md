@@ -5,7 +5,7 @@ It is the point of maximal electrostatic potential inside a triangle having a ho
 
 Center is also listed in Kimberling's Encyclopedia of triangle centers under *X(5626) = CENTER OF ELECTROSTATIC POTENTIAL.* (http://faculty.evansville.edu/ck6/encyclopedia/ETCPart4.html)
 
-The point was successfully used to improve the stability and speed up the convergence of BEM methods for electrostatic problems.
+The point is successfully used to improve the stability and speed up the convergence of BEM methods for electrostatic problems.
 
 This repository contains a few routines for numerical calculation of X(5626). Precise routines are written in Wolfram Mathematica, with practical approximation being implemented in C and Python.
 
