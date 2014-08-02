@@ -77,7 +77,7 @@ int electrostaticCenter3D(double ax, double ay, double az, double bx, double by,
 _Parameters:_   
 
 | Name | Type | Description|   
-|------|------|------------|   
+|-----:|------|------------|   
 | *ax, ay, az, bx, by, bz, cx, cy, cz* | double | 3D Cartesian coordinates of ABC triangle vertices |   
 | *x, y, z* | double * | pointers to result variables for 3D Cartesian coordinates of electrostatic center |   
 
