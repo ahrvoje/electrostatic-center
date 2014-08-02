@@ -54,15 +54,20 @@ A brief documentation for C functions available in __electrostaticCenter.c__. Th
 Computes coordinates of electrostatic center based on 2D Cartesian coordinates of triangle vertices.
 
 _Syntax:_
+
 ```C
 int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx, double cy,
                           double* x, double* y)
 ```
-_Parameters:_   
-*ax, ay, bx, by, cx, cy* - 2D Cartesian coordinates of ABC triangle vertices   
-*x, y* - pointers to result variables for 2D Cartesian coordinates of electrostatic center
+_Parameters:_
 
-_Return value:_   
+| Name | Type | Description|   
+|-----:|------|------------|   
+| *ax, ay, bx, by, cx, cy* | double | 2D Cartesian coordinates of ABC triangle vertices |   
+| *x, y* | double* | pointers to result variables for 2D Cartesian coordinates of electrostatic center |   
+
+_Return value:_
+
 *1* - if calculation is successfully executed   
 *< 0* - if calculation failed, it can vary between -6 and -1 depending on where the problem occurred
 
@@ -70,6 +75,7 @@ _Return value:_
 Computes coordinates of electrostatic center based on 3D Cartesian coordinates of triangle vertices.
 
 _Syntax:_
+
 ```C
 int electrostaticCenter3D(double ax, double ay, double az, double bx, double by, double bz,
                           double cx, double cy, double cz, double* x, double* y, double* z)
@@ -79,9 +85,10 @@ _Parameters:_
 | Name | Type | Description|   
 |-----:|------|------------|   
 | *ax, ay, az, bx, by, bz, cx, cy, cz* | double | 3D Cartesian coordinates of ABC triangle vertices |   
-| *x, y, z* | double * | pointers to result variables for 3D Cartesian coordinates of electrostatic center |   
+| *x, y, z* | double* | pointers to result variables for 3D Cartesian coordinates of electrostatic center |   
 
-_Return value:_   
+_Return value:_
+
 *1* - if calculation is successfully executed   
 *< 0* - if calculation failed, it can vary between -8 and -1 depending on where the problem occurred
 
