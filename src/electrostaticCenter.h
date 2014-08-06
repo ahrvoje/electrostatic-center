@@ -8,6 +8,9 @@
 #ifndef ELECTROCENTER_H_
 #define ELECTROCENTER_H_
 
+// uncomment for debugging purposes
+//#define ELECTROCENTERDEBUG
+
 // enforce C names decoration
 #ifdef __cplusplus
 extern "C" {

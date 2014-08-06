@@ -8,9 +8,6 @@
 #include <math.h>
 #include "electrostaticCenter.h"
 
-// uncomment for debugging purposes
-//#define ELECTROCENTERDEBUG
-
 // enforce C names decoration
 #ifdef __cplusplus
 extern "C" {
