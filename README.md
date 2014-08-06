@@ -12,7 +12,7 @@ This repository contains a few routines for numerical calculation of X(5626). Pr
 Wolfram Mathematica
 -------------------
 
-A brief documentation for Mathematica functions available in __ElectrostaticCenter.nb.__
+A brief documentation for Mathematica functions available in __ElectrostaticCenter.nb__.
 
 ### Functions
 ```
@@ -46,7 +46,7 @@ Returns electrostatic center X(5626) of triangle defined with 3D Cartesian coord
 C
 -
 
-A brief documentation for C functions available in __electrostaticCenter.c.__ These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
+A brief documentation for C functions available in __electrostaticCenter.c__. These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
 
 ### Functions
 
@@ -68,7 +68,7 @@ _Parameters:_
 
 _Remark:_
 
-Performance and return value depend on ELECTROCENTERDEBUG preprocess variable being defined in __electrostaticCenter.c.__
+Performance and return value depend on ELECTROCENTERDEBUG preprocess variable being defined in __electrostaticCenter.c__.
 
 _Return value:_
 
@@ -96,7 +96,7 @@ _Parameters:_
 
 _Remark:_
 
-Performance and return value depend on ELECTROCENTERDEBUG preprocess variable being defined in __electrostaticCenter.c.__
+Performance and return value depend on ELECTROCENTERDEBUG preprocess variable being defined in __electrostaticCenter.c__.
 
 _Return value:_
 
@@ -135,7 +135,7 @@ int main(void)
 Python
 ------
 
-A brief documentation for Python functions available in __electrostaticCenter.py.__ These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
+A brief documentation for Python functions available in __electrostaticCenter.py__. These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
 
 ### Functions
 ```Python
