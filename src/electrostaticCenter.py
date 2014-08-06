@@ -5,17 +5,24 @@
 #      Author: Hrvoje Abraham
 #
 
+from sys import exc_info
 from math import log, exp, sqrt
 
 def sqr(x):
     return x*x
 
+class eLAException(Exception):
+    pass
+
 def electrostaticLambdaApprox(a, b, c):
     try:
         l = 3*log(a+b+c) - log(-a+b+c) - log(a-b+c) - log(a+b-c) + 3*log((2+sqrt(3))/3)
         return l
-    except:
-        raise NameError('electrostaticLambdaApprox error')
+    except Exception as e:
+        raise eLAException, eLAException(e), exc_info()[2]
+
+class eCUVWException(Exception):
+    pass
 
 def electrostaticCenterUVW(a, b, c):
     try:
@@ -31,8 +38,11 @@ def electrostaticCenterUVW(a, b, c):
         w = c * (1 + 2/ec)
 
         return [u, v, w]
-    except:
-        raise NameError('electrostaticCenterUVW error')
+    except eLAException as e:
+        raise eCUVWException, eCUVWException(e), exc_info()[2]
+
+class eC2DException(Exception):
+    pass
 
 # computation of triangle electrostatic center X(5626)
 # using numerically robust approximation based on the article
@@ -56,8 +66,11 @@ def electrostaticCenter2D(triangle2D):
         y = 0.5 * (ta*(xb-xc) + tb*(xc-xa) + tc*(xa-xb)) / (ya*(xb-xc) + yb*(xc-xa) + yc*(xa-xb))
 
         return [x, y]
-    except:
-        raise NameError('electrostaticCenter2D error')
+    except eCUVWException as e:
+        raise eC2DException, eC2DException(e), exc_info()[2]
+
+class eC3DException(Exception):
+    pass
 
 # 3D case
 def electrostaticCenter3D(triangle3D):
@@ -91,5 +104,5 @@ def electrostaticCenter3D(triangle3D):
         z = az + ect*tz + ecn*nz
 
         return [x, y, z]
-    except:
-        raise NameError('electrostaticCenter3D error')
+    except eC2DException as e:
+        raise eC3DException, eC3DException(e), exc_info()[2]

@@ -8,6 +8,9 @@
 #include <math.h>
 #include "electrostaticCenter.h"
 
+// uncomment for debugging purposes
+//#define ELECTROCENTERDEBUG
+
 // enforce C names decoration
 #ifdef __cplusplus
 extern "C" {
@@ -22,10 +25,14 @@ inline int electrostaticLambdaApprox(double a, double b, double c, double* lambd
 {
     *lambda = 3*log(a+b+c) - log(-a+b+c) - log(a-b+c) - log(a+b-c) + 3*log((2+sqrt(3))/3);
 
+#ifdef ELECTROCENTERDEBUG
     if (*lambda!=0 && !isnormal(*lambda))
         return -1;
 
     return 1;
+#else
+    return 0;
+#endif
 }
 
 int electrostaticCenterUVW(double a, double b, double c, double* u, double* v, double* w)
@@ -34,8 +41,10 @@ int electrostaticCenterUVW(double a, double b, double c, double* u, double* v, d
 
     int statusLambda = electrostaticLambdaApprox(a, b, c, &lambda);
 
+#ifdef ELECTROCENTERDEBUG
     if (statusLambda < 0)
         return statusLambda;
+#endif
 
     k = 2*lambda / (a+b+c);
 
@@ -43,17 +52,23 @@ int electrostaticCenterUVW(double a, double b, double c, double* u, double* v, d
     eb = exp(k*b) - 1;
     ec = exp(k*c) - 1;
 
+#ifdef ELECTROCENTERDEBUG
     if (!isnormal(ea) || !isnormal(eb) || !isnormal(ec))
         return -2;
+#endif
 
     *u = a * (1 + 2/ea);
     *v = b * (1 + 2/eb);
     *w = c * (1 + 2/ec);
 
+#ifdef ELECTROCENTERDEBUG
     if ((*u!=0 && !isnormal(*u)) || (*v!=0 && !isnormal(*v)) || (*w!=0 && !isnormal(*w)))
         return -3;
 
     return 1;
+#else
+    return 0;
+#endif
 }
 
 // computation of triangle electrostatic center X(5626)
@@ -70,28 +85,38 @@ int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx,
     b = sqrt(sqr(ax-cx) + sqr(ay-cy));
     c = sqrt(sqr(bx-ax) + sqr(by-ay));
 
+#ifdef ELECTROCENTERDEBUG
     if (!isnormal(a) || !isnormal(b) || !isnormal(c))
         return -4;
+#endif
 
     int statusUVW = electrostaticCenterUVW(a, b, c, &u, &v, &w);
 
+#ifdef ELECTROCENTERDEBUG
     if (statusUVW < 0 )
         return statusUVW;
+#endif
 
     ta = ax*ax + ay*ay - v*w;
     tb = bx*bx + by*by - w*u;
     tc = cx*cx + cy*cy - u*v;
 
+#ifdef ELECTROCENTERDEBUG
     if ((ta!=0 && !isnormal(ta)) || (tb!=0 && !isnormal(tb)) || (tc!=0 && !isnormal(tc)))
         return -5;
+#endif
 
     *x = 0.5 * (ta*(by-cy) + tb*(cy-ay) + tc*(ay-by)) / (ax*(by-cy) + bx*(cy-ay) + cx*(ay-by));
     *y = 0.5 * (ta*(bx-cx) + tb*(cx-ax) + tc*(ax-bx)) / (ay*(bx-cx) + by*(cx-ax) + cy*(ax-bx));
 
+#ifdef ELECTROCENTERDEBUG
     if ((*x!=0 && !isnormal(*x)) || (*y!=0 && !isnormal(*y)))
         return -6;
 
     return 1;
+#else
+    return 0;
+#endif
 }
 
 // 3D case
@@ -116,14 +141,18 @@ int electrostaticCenter3D(double ax, double ay, double az, double bx, double by,
 
     y0 = sqrt(sqr(nx) + sqr(ny) + sqr(nz));
 
+#ifdef ELECTROCENTERDEBUG
     // c OR y0 must not be 0
     if (!isnormal(c) || (x0!=0 && !isnormal(x0)) || !isnormal(y0))
         return -7;
+#endif
 
     int statusXY = electrostaticCenter2D(0, 0, c, 0, x0, y0, &ect, &ecn);
 
+#ifdef ELECTROCENTERDEBUG
     if (statusXY < 0)
         return statusXY;
+#endif
 
     ry0 = 1/y0;
 
@@ -135,10 +164,13 @@ int electrostaticCenter3D(double ax, double ay, double az, double bx, double by,
     *y = ay + ect*ty + ecn*ny;
     *z = az + ect*tz + ecn*nz;
 
+#ifdef ELECTROCENTERDEBUG
     if ((*x!=0 && !isnormal(*x)) || (*y!=0 && !isnormal(*y)) || (*z!=0 && !isnormal(*z)))
         return -8;
 
     return 1;
+#endif
+    return 0;
 }
 
 #ifdef __cplusplus
