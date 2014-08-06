@@ -12,7 +12,7 @@ This repository contains a few routines for numerical calculation of X(5626). Pr
 Wolfram Mathematica
 -------------------
 
-A brief documentation for Mathematica functions available in __ElectrostaticCenter.nb__
+A brief documentation for Mathematica functions available in __ElectrostaticCenter.nb.__
 
 ### Functions
 ```
@@ -46,7 +46,7 @@ Returns electrostatic center X(5626) of triangle defined with 3D Cartesian coord
 C
 -
 
-A brief documentation for C functions available in __electrostaticCenter.c__. These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
+A brief documentation for C functions available in __electrostaticCenter.c.__ These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
 
 ### Functions
 
@@ -66,12 +66,17 @@ _Parameters:_
 | *ax, ay, bx, by, cx, cy* | double | 2D Cartesian coordinates of ABC triangle vertices |   
 | *x, y* | double* | pointers to result variables for 2D Cartesian coordinates of electrostatic center |   
 
+_Remark:_
+
+Performance and return value depend on ELECTROCENTERDEBUG preprocess variable being defined in __electrostaticCenter.c.__
+
 _Return value:_
 
 | Value | Description |
 |------:|-------------|
-| *1* | if calculation is successfully executed |
-| *< 0* | if calculation failed, it can vary between -6 and -1 depending on where the problem occurred |
+| *< 0* | If calculation failed and ELECTROCENTERDEBUG is defined. It can vary between -6 and -1 depending on where the problem occurred. |
+| *0* | If ELECTROCENTERDEBUG not defined. |
+| *1* | If calculation is successfully executed and ELECTROCENTERDEBUG is defined. |
 
 #### electrostaticCenter3D
 Computes coordinates of electrostatic center based on 3D Cartesian coordinates of triangle vertices.
@@ -89,12 +94,17 @@ _Parameters:_
 | *ax, ay, az, bx, by, bz, cx, cy, cz* | double | 3D Cartesian coordinates of ABC triangle vertices |   
 | *x, y, z* | double* | pointers to result variables for 3D Cartesian coordinates of electrostatic center |   
 
+_Remark:_
+
+Performance and return value depend on ELECTROCENTERDEBUG preprocess variable being defined in __electrostaticCenter.c.__
+
 _Return value:_
 
 | Value | Description |
 |------:|-------------|
-| *1* | if calculation is successfully executed |
-| *< 0* | if calculation failed, it can vary between -8 and -1 depending on where the problem occurred |
+| *< 0* | If calculation failed and ELECTROCENTERDEBUG is defined. It can vary between -8 and -1 depending on where the problem occurred. |
+| *0* | If ELECTROCENTERDEBUG not defined. |
+| *1* | If calculation is successfully executed and ELECTROCENTERDEBUG is defined. |
 
 ### Example
 ```C
@@ -125,7 +135,7 @@ int main(void)
 Python
 ------
 
-A brief documentation for Python functions available in __electrostaticCenter.py__. These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
+A brief documentation for Python functions available in __electrostaticCenter.py.__ These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
 
 ### Functions
 ```Python
