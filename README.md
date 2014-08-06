@@ -68,7 +68,7 @@ _Parameters:_
 
 _Remark:_
 
-Performance and return value depend on ELECTROCENTERDEBUG preprocess variable being defined in __electrostaticCenter.c__.
+Performance and return value depend on ELECTROCENTERDEBUG preprocess variable being defined in __electrostaticCenter.h__.
 
 _Return value:_
 
@@ -96,7 +96,7 @@ _Parameters:_
 
 _Remark:_
 
-Performance and return value depend on ELECTROCENTERDEBUG preprocess variable being defined in __electrostaticCenter.c__.
+Performance and return value depend on ELECTROCENTERDEBUG preprocess variable being defined in __electrostaticCenter.h__.
 
 _Return value:_
 
