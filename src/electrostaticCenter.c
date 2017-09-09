@@ -13,12 +13,12 @@
 extern "C" {
 #endif // __cplusplus
 
-inline double sqr(double x)
+double sqr(double x)
 {
     return x*x;
 }
 
-inline int electrostaticLambdaApprox(double a, double b, double c, double* lambda)
+int electrostaticLambdaApprox(double a, double b, double c, double* lambda)
 {
     *lambda = 3*log(a+b+c) - log(-a+b+c) - log(a-b+c) - log(a+b-c) + 3*log((2+sqrt(3))/3);
 
@@ -43,7 +43,7 @@ int electrostaticCenterUVW(double a, double b, double c, double* u, double* v, d
         return statusLambda;
 #endif
 
-    k = 2*lambda / (a+b+c);
+    k = 2 * lambda / (a+b+c);
 
     ea = exp(k*a) - 1;
     eb = exp(k*b) - 1;
@@ -72,15 +72,18 @@ int electrostaticCenterUVW(double a, double b, double c, double* u, double* v, d
 // using numerically robust approximation based on the article
 // "From electrostatic potentials to yet another triangle center", by Hrvoje Abraham & Vjekoslav Kovac, 2013.
 // http://arxiv.org/abs/1312.3176
-int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx, double cy, double* x, double* y)
+int electrostaticCenter2D(
+    double ax, double ay, double bx,
+    double by, double cx, double cy,
+    double* x, double* y)
 {
     double a, b, c;
     double u, v, w;
     double ta, tb, tc;
 
-    a = sqrt(sqr(cx-bx) + sqr(cy-by));
-    b = sqrt(sqr(ax-cx) + sqr(ay-cy));
-    c = sqrt(sqr(bx-ax) + sqr(by-ay));
+    a = hypot(cx-bx, cy-by);
+    b = hypot(ax-cx, ay-cy);
+    c = hypot(bx-ax, by-ay);
 
 #ifdef ELECTROCENTERDEBUG
     if (!isnormal(a) || !isnormal(b) || !isnormal(c))
@@ -117,18 +120,21 @@ int electrostaticCenter2D(double ax, double ay, double bx, double by, double cx,
 }
 
 // 3D case
-int electrostaticCenter3D(double ax, double ay, double az, double bx, double by, double bz, double cx, double cy, double cz, double* x, double* y, double* z)
+int electrostaticCenter3D(
+    double ax, double ay, double az,
+    double bx, double by, double bz,
+    double cx, double cy, double cz,
+    double* x, double* y, double* z)
 {
     double tx, ty, tz;
     double nx, ny, nz;
-    double c, rc, x0, y0, ry0, ect, ecn;
+    double c, x0, y0, ect, ecn;
 
     c = sqrt(sqr(bx-ax) + sqr(by-ay) + sqr(bz-az));
-    rc = 1/c;
 
-    tx = (bx-ax) * rc;
-    ty = (by-ay) * rc;
-    tz = (bz-az) * rc;
+    tx = (bx-ax) / c;
+    ty = (by-ay) / c;
+    tz = (bz-az) / c;
 
     x0 = (cx-ax)*tx + (cy-ay)*ty + (cz-az)*tz;
 
@@ -151,11 +157,9 @@ int electrostaticCenter3D(double ax, double ay, double az, double bx, double by,
         return statusXY;
 #endif
 
-    ry0 = 1/y0;
-
-    nx *= ry0;
-    ny *= ry0;
-    nz *= ry0;
+    nx /= y0;
+    ny /= y0;
+    nz /= y0;
 
     *x = ax + ect*tx + ecn*nx;
     *y = ay + ect*ty + ecn*ny;

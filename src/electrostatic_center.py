@@ -5,16 +5,15 @@
 #      Author: Hrvoje Abraham
 #
 
-from math import log, exp, sqrt
+from math import log, exp, sqrt, hypot
 
 
-def electrostatic_lambda_approx(a, b, c):
+def x5626_lambda_approx(a, b, c):
     return 3 * log(a + b + c) - log(-a + b + c) - log(a - b + c) - log(a + b - c) + 3 * log((2 + sqrt(3)) / 3)
 
 
 def electrostatic_center_uvw(a, b, c):
-    l = electrostatic_lambda_approx(a, b, c)
-    k = 2 * l / (a + b + c)
+    k = 2 * x5626_lambda_approx(a, b, c) / (a + b + c)
 
     ea = exp(k * a) - 1
     eb = exp(k * b) - 1
@@ -39,9 +38,9 @@ def electrostatic_center_2d(triangle_2d):
     """
     (xa, ya), (xb, yb), (xc, yc) = triangle_2d
 
-    a = sqrt((xc - xb) ** 2 + (yc - yb) ** 2)
-    b = sqrt((xa - xc) ** 2 + (ya - yc) ** 2)
-    c = sqrt((xb - xa) ** 2 + (yb - ya) ** 2)
+    a = hypot(xc - xb, yc - yb)
+    b = hypot(xa - xc, ya - yc)
+    c = hypot(xb - xa, yb - ya)
 
     u, v, w = electrostatic_center_uvw(a, b, c)
 
@@ -58,7 +57,8 @@ def electrostatic_center_2d(triangle_2d):
 def electrostatic_center_3d(triangle_3d):
     (ax, ay, az), (bx, by, bz), (cx, cy, cz) = triangle_3d
 
-    c = sqrt((bx-ax) ** 2 + (by-ay) ** 2 + (bz-az) ** 2)
+    dx, dy, dz = bx - ax, by - ay, bz - az
+    c = sqrt(dx*dx + dy*dy + dz*dz)
 
     tx = (bx - ax) / c
     ty = (by - ay) / c
@@ -70,7 +70,7 @@ def electrostatic_center_3d(triangle_3d):
     ny = cy - ay - x0 * ty
     nz = cz - az - x0 * tz
 
-    y0 = sqrt(nx ** 2 + ny ** 2 + nz ** 2)
+    y0 = sqrt(nx*nx + ny*ny + nz*nz)
 
     nx /= y0
     ny /= y0
