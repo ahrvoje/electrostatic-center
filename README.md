@@ -139,13 +139,13 @@ A brief documentation for Python functions available in __electrostaticCenter.py
 
 ### Functions
 ```Python
-[x, y] = electrostaticCenter2D([[ax, ay], [bx, by], [cx, cy]])
+x, y = electrostaticCenter2D(((ax, ay), (bx, by), (cx, cy)))
 ```
 
 Returns electrostatic center of triangle defined as a triplet of 2D Cartesian coordinates of its vertices.
 
 ```Python
-[x, y, z] = electrostaticCenter3D([[ax, ay, az], [bx, by, bz], [cx, cy, cz]])
+x, y, z = electrostaticCenter3D(((ax, ay, az), (bx, by, bz), (cx, cy, cz)))
 ```
 
 Returns electrostatic center of triangle defined as a triplet of 3D Cartesian coordinates of its vertices.
@@ -154,8 +154,8 @@ Returns electrostatic center of triangle defined as a triplet of 3D Cartesian co
 ```Python
 from electrostaticCenter import *
 
-print 'electrostatic center [x, y] =', electrostaticCenter2D([[-1, 0], [2, 0], [0, 2]])
-print 'electrostatic center [x, y, z] =', electrostaticCenter3D([[-1, 0, 1], [2, 0, 2], [0, 2, 3]])
+print 'electrostatic center (x, y) =', electrostaticCenter2D(((-1, 0), (2, 0), (0, 2)))
+print 'electrostatic center (x, y, z) =', electrostaticCenter3D(((-1, 0, 1), (2, 0, 2), (0, 2, 3)))
 ```
 
 ![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_PythonExample.png)
