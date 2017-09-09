@@ -3,7 +3,7 @@ Center of electrostatic potential X(5626)
 
 It is the point of maximal electrostatic potential inside a triangle having a homogeneous surface charge distribution. It's also a point of zero electric field of the same charge distribution, and happens to satisfy the mathematical definition of triangle center. A lot of technical details can be found in the article *'From electrostatic potentials to yet another triangle center'* by Hrvoje Abraham and Vjekoslav Kovac. (http://arxiv.org/pdf/1312.3176v2.pdf)
 
-Center is also listed in Kimberling's Encyclopedia of triangle centers under *X(5626) = CENTER OF ELECTROSTATIC POTENTIAL.* (http://faculty.evansville.edu/ck6/encyclopedia/ETCPart4.html)
+Center is also listed in Kimberling's Encyclopedia of triangle centers under *X(5626) = CENTER OF ELECTROSTATIC POTENTIAL.* (http://faculty.evansville.edu/ck6/encyclopedia/ETCPart4.html#X5626)
 
 The point is successfully used to improve the stability and speed up the convergence of BEM methods for electrostatic problems.
 
@@ -135,27 +135,27 @@ int main(void)
 Python
 ------
 
-A brief documentation for Python functions available in __electrostaticCenter.py__. These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
+A brief documentation for Python functions available in __electrostatic_center.py__. These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
 
 ### Functions
 ```Python
-[x, y] = electrostaticCenter2D([[ax, ay], [bx, by], [cx, cy]])
+x, y = electrostatic_center_2d(((ax, ay), (bx, by), (cx, cy)))
 ```
 
 Returns electrostatic center of triangle defined as a triplet of 2D Cartesian coordinates of its vertices.
 
 ```Python
-[x, y, z] = electrostaticCenter3D([[ax, ay, az], [bx, by, bz], [cx, cy, cz]])
+x, y, z = electrostatic_center_3d(((ax, ay, az), (bx, by, bz), (cx, cy, cz)))
 ```
 
 Returns electrostatic center of triangle defined as a triplet of 3D Cartesian coordinates of its vertices.
 
 ### Example
 ```Python
-from electrostaticCenter import *
+from electrostatic_center import electrostatic_center_2d, electrostatic_center_3d
 
-print 'electrostatic center [x, y] =', electrostaticCenter2D([[-1, 0], [2, 0], [0, 2]])
-print 'electrostatic center [x, y, z] =', electrostaticCenter3D([[-1, 0, 1], [2, 0, 2], [0, 2, 3]])
+print('electrostatic center (x, y) =', electrostatic_center_2d(((-1, 0), (2, 0), (0, 2))))
+print('electrostatic center (x, y, z) =', electrostatic_center_3d(((-1, 0, 1), (2, 0, 2), (0, 2, 3))))
 ```
 
 ![alt tag](https://raw.githubusercontent.com/ahrvoje/electrostatic-center/master/resources/ElectrostaticCenter_PythonExample.png)
