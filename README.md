@@ -135,17 +135,17 @@ int main(void)
 Python
 ------
 
-A brief documentation for Python functions available in __electrostaticCenter.py__. These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
+A brief documentation for Python functions available in __electrostatic_center.py__. These functions use approximate estimation of *lambda* parameter described in section 6 of the article mentioned in the header of this document. Estimation is implemented in a way which reduces the probability of numerical overflow or underflow.
 
 ### Functions
 ```Python
-x, y = electrostaticCenter2D(((ax, ay), (bx, by), (cx, cy)))
+x, y = electrostatic_center_2d(((ax, ay), (bx, by), (cx, cy)))
 ```
 
 Returns electrostatic center of triangle defined as a triplet of 2D Cartesian coordinates of its vertices.
 
 ```Python
-x, y, z = electrostaticCenter3D(((ax, ay, az), (bx, by, bz), (cx, cy, cz)))
+x, y, z = electrostatic_center_3d(((ax, ay, az), (bx, by, bz), (cx, cy, cz)))
 ```
 
 Returns electrostatic center of triangle defined as a triplet of 3D Cartesian coordinates of its vertices.
